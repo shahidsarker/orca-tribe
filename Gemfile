@@ -69,3 +69,6 @@ gem 'jquery-rails'
 
 gem 'faker'
 gem 'devise'
+
+# voting gem -Shahid
+gem 'acts_as_votable'
