@@ -7,6 +7,8 @@ class CreateOrgs < ActiveRecord::Migration[5.2]
         t.string :website #web address url 
         t.string :thumbnail #image/logo of org 
         t.string :phone  #tel num
+        t.timestamps :created_at #creation date incase we need to organize by most recent etc.
+        t.timestamps :updated_at
         t.integer :api_org_id #reference id from API
   end
 end

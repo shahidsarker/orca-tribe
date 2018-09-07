@@ -1,5 +1,5 @@
 class Org < ApplicationRecord
-    #has_many :opps
+    has_many :opps
 end
 
 #milly
