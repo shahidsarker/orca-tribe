@@ -72,3 +72,6 @@ gem 'devise'
 
 # voting gem -Shahid
 gem 'acts_as_votable'
+
+# -Shahid
+gem 'httparty'
