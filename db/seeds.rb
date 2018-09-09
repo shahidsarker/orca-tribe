@@ -15,7 +15,8 @@
 # t.string "avatar", default: "", null: false
 # t.text "bio", default: "", null: false
 
-# >>>>>>>>> BLANK USER TEMPLATE<<<<<<<<<<<<<<
+#imani: >>>>>>>>> BLANK USER TEMPLATE<<<<<<<<<<<<<<
+#imani: note that when created a new user encrypted_password: should be change to password:.It will encryt once seeded.
 
 # User.create(
 #     email: '',
@@ -27,13 +28,14 @@
 #     bio: ''
 # )
 
+
 User.create(
     email: 'asimone@gmail.com',
-    encrypted_password: 'password',
+    password: 'password',
     first_name: 'Ashley',
     last_name: 'Simone',
     location: 'Brooklyn',
-    avatar: '',
+    avatar: '/assets/default_user.png',
     bio: 'We must stand up, move the needle emerging do-gooder entrepreneur movements. Co-creation overcome injustice collaborative consumption theory of change the design thinking. Inclusion, thought provoking activate shine white paper. Segmentation empower communities a save the world framework vibrant inspire.'
 )
 
