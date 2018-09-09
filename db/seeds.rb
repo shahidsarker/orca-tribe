@@ -40,23 +40,23 @@
 # )
 
 
-User.create(
-    email: 'dpatlut@gmail.com',
-    password: 'password',
-    first_name: 'David',
-    last_name: 'Patlut',
-    location: 'Brooklyn',
-    avatar: '/assets/default_user.png',
-    bio: 'Thought provoking NGO venture philanthropy; natural resources state of play compelling shared unit of analysis move the needle support. Change-makers deep dive, theory of change program areas impact fairness but collaborative consumption.'
-)
+# User.create(
+#     email: 'dpatlut@gmail.com',
+#     password: 'password',
+#     first_name: 'David',
+#     last_name: 'Patlut',
+#     location: 'Brooklyn',
+#     avatar: '/assets/default_user.png',
+#     bio: 'Thought provoking NGO venture philanthropy; natural resources state of play compelling shared unit of analysis move the needle support. Change-makers deep dive, theory of change program areas impact fairness but collaborative consumption.'
+# )
 
 
-User.create(
-    email: 'jmurphy@gmail.com',
-    password: 'password',
-    first_name: 'John',
-    last_name: 'Murphy',
-    location: 'Queens',
-    avatar: '/assets/default_user.png',
-    bio: 'The, mass incarceration citizen-centered shared value shine justice; living a fully ethical life energize LGBTQ+. The, replicable commitment citizen-centered, scalable. Do-gooder, shared unit of analysis cultivate indicators compelling her body her rights compassion.'
-)
+# User.create(
+#     email: 'jmurphy@gmail.com',
+#     password: 'password',
+#     first_name: 'John',
+#     last_name: 'Murphy',
+#     location: 'Queens',
+#     avatar: '/assets/default_user.png',
+#     bio: 'The, mass incarceration citizen-centered shared value shine justice; living a fully ethical life energize LGBTQ+. The, replicable commitment citizen-centered, scalable. Do-gooder, shared unit of analysis cultivate indicators compelling her body her rights compassion.'
+# )
