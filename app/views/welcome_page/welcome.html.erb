@@ -1,0 +1,29 @@
+    
+
+    
+    <h1>Welcome to, iVolunteer </h1>
+
+    <h5>Over at iVolunteer &copy;, we know you want to do lots of good in the world so we get you access to the orginzations you love so you can spend more time volunteering & less time searching</h5>
+
+    
+<% if current_user %>   
+    <div>  
+      <%= link_to 'Sign out' , destroy_user_session_path, method: :delete %> 
+    </div>
+        
+        <% else %>
+            <div>
+                 <%= link_to 'Sign in' , new_user_session_path %>
+            </div>
+
+          <div>
+            <%= link_to 'Sign up' , new_user_registration_path %>
+          </div>  
+    <% end %>
+
+<%# if there is a current user, only show sign out, if not show them option to sign in or sign-up %>
+
+
+
+
+
