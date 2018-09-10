@@ -27,6 +27,7 @@ ActiveRecord::Schema.define(version: 2018_09_07_210813) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "api_opp_id"
+    t.integer "org_id"
   end
 
   create_table "orgs", force: :cascade do |t|

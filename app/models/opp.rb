@@ -1,5 +1,6 @@
 class Opp < ApplicationRecord
-    belongs_to :orgs
+    belongs_to :org
+    #changed from orgs to org
     has_many :users #volunteers
 end
 

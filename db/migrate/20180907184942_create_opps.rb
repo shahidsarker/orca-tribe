@@ -11,6 +11,7 @@ class CreateOpps < ActiveRecord::Migration[5.2]
       t.string :location
       t.timestamps
       t.integer :api_opp_id
+      t.integer :org_id
     end
   end
 end
