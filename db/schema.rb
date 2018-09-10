@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_09_07_210813) do
+ActiveRecord::Schema.define(version: 2018_09_10_032640) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -27,6 +27,8 @@ ActiveRecord::Schema.define(version: 2018_09_07_210813) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "api_opp_id"
+    t.bigint "org_id"
+    t.index ["org_id"], name: "index_opps_on_org_id"
   end
 
   create_table "orgs", force: :cascade do |t|
@@ -81,6 +83,7 @@ ActiveRecord::Schema.define(version: 2018_09_07_210813) do
     t.index ["voter_id", "voter_type", "vote_scope"], name: "index_votes_on_voter_id_and_voter_type_and_vote_scope"
   end
 
+  add_foreign_key "opps", "orgs"
   add_foreign_key "user_opps", "opps"
   add_foreign_key "user_opps", "users"
 end
