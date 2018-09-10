@@ -60,3 +60,68 @@
 #     avatar: '/assets/default_user.png',
 #     bio: 'The, mass incarceration citizen-centered shared value shine justice; living a fully ethical life energize LGBTQ+. The, replicable commitment citizen-centered, scalable. Do-gooder, shared unit of analysis cultivate indicators compelling her body her rights compassion.'
 # )
+# >>>>>>>>> REQUIREMENTS TO CREATE AN ORG <<<<<<<<<<<<<<
+# t.string "name"
+# t.text "summary"
+# t.string "address"
+# t.string "website"
+# t.string "thumbnail"
+# t.string "phone"
+# t.datetime "created_at", null: false
+# t.datetime "updated_at", null: false
+# t.integer "api_org_id"
+
+
+
+#imani: >>>>>>>>> BLANK ORG TEMPLATE<<<<<<<<<<<<<<
+
+# Org.create(
+#     name: '',
+#     summary: '',
+#     address: '',
+#     website: '',
+#     thumbnail: '',
+#     phone: '',
+#     api_org_id: ''
+# )
+
+    # Org.create(
+    #     name: 'Sample Organization 1',
+    #     summary: 'Mass incarceration citizen-centered shared value shine justice; living a fully ethical life energize LGBTQ+. The, replicable commitment citizen-centered, scalable. Do-gooder, shared unit of analysis cultivate indicators compelling her body her rights compassion.',
+    #     address: '123 address St New York NY 11222',
+    #     website: 'www.organization.com',
+    #     thumbnail: '/assets/default_user.png',
+    #     phone:  '631-357-1164',
+    #     api_org_id: 34
+    # )
+
+
+
+
+    # >>>>>>>>> REQUIREMENTS TO CREATE AN OPP <<<<<<<<<<<<<<
+    # t.string "title"
+    # t.date "start_date"
+    # t.date "end_date"
+    # t.text "summary"
+    # t.integer "vol_request"
+    # t.boolean "recurrence"
+    # t.text "requirement"
+    # t.string "location"
+    # t.datetime "created_at", null: false
+    # t.datetime "updated_at", null: false
+    # t.integer "api_opp_id"
+
+
+
+    # Opp.create(
+    #     title: "Soup Kitchen Saturdays",
+    #     start_date:  DateTime.new(2018,11,20),
+    #     end_date:  DateTime.new(2019,11,21),
+    #     summary: "Serve meals to community members on Saturdays",
+    #     vol_request: 10,
+    #     recurrence: true,
+    #     requirement: "We just need people who are willing and happy to spend time feeding needy folks",
+    #     location: "123 Street st New York NY 11222",
+    #     api_opp_id: 34,
+    #     org_id: 1
+    # )
