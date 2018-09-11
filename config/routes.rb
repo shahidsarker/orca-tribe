@@ -13,4 +13,6 @@ get '/profile' => 'welcome_page#specific_user'
   # devise_for :users
   resources :orgs
   resources :opps
+
+  get 'orgs/:id/vote', to: 'orgs#vote'
 end

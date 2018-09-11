@@ -1,3 +1,13 @@
 <%#  Single opportunity page %>
 <%#  Using @org here %>
 
+<%= @org.name %>
+<%= @org.votes_for.size %>
+
+<%# if session[:user_id] %>
+  <%# link_to 'VOTE', (@org.liked_by(@current_person))  %>
+<%# end %>
+
+<%= @current_person.first_name %>
+
+<input type="button" onclick="window.location = '/vote'">
