@@ -1,17 +1,50 @@
 <%#  Single opportunity page %>
 <%#  Using @org here %>
-
-<%= link_to like_org_path(@org), method: :put do %>
-  Upvotes
-  <%= @org.get_upvotes.size %>
-<% end %>
-
-<%= link_to dislike_org_path(@org), method: :put do %>
-  Downvote
-  <%= @org.get_downvotes.size %>
-<% end %>
-
-<p><%= @org.name %> </p>
-<p> Mission Statement : <%= @org.summary %> </p>
-<p> Address : <%= @org.address %> </p>
-<p> Website : <a href ='<%= @org.website %>'><%= @org.website %></a> </p>
+<div class="col-md-12">
+	<div class="card">
+		<div class="card-body">
+		  <div class="row">
+		      <div class="col-md-12">
+		        <div class="card-header"><%= @org.name%></div>
+            <div class="card-body">
+              <h5 class="card-title"><%= @org.name%></h5>
+              <p class="card-text">
+                <%= link_to like_org_path(@org), method: :put do %>
+                  Upvotes
+                  <%= @org.get_upvotes.size %>
+                <% end %>
+                <%= link_to dislike_org_path(@org), method: :put do %>
+                  Downvote
+                  <%= @org.get_downvotes.size %>
+                <% end %>
+              </p>
+              <p class="card-text">Mission Statement : <%= @org.summary %></p>
+              <p class="card-text">Address : <%= @org.address %></p>
+              <p class="card-text">Website : <a href ='<%= @org.website %>'><%= @org.website %></a></p>
+            </div>
+          </div>
+		  </div>
+    </div>
+  </div>
+</div>
+<hr>
+<h3>Opportunities(loop opps)</h3>
+<div class="row">
+		                <div class="col-md-6">
+		                   <div class="card bg-light mb-3">
+                              <div class="card-header">opps 1</div>
+                              <div class="card-body">
+                                <h5 class="card-title">Light card title</h5>
+                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                              </div>
+                            </div>
+		                </div>
+		                <div class="col-md-6">
+		                   <div class="card bg-light mb-3">
+                              <div class="card-header">opp 2</div>
+                              <div class="card-body">
+                                <h5 class="card-title">Light card title</h5>
+                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                              </div>
+                            </div>
+		                </div>

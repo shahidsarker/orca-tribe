@@ -20,7 +20,7 @@
     <div class="card-block px-3">
       <h4 class="card-title"><%= link_to item.title, { :action => 'show', :id => item.id} -%></h4>
       <p class="card-text">Description: <%= item.summary %></p>
-      <p class="card-text">Dates : <%= item.start_date.strftime("%B %d, %Y") %> - <%= item.end_date.strftime("%B %d, %Y") %></p>
+      <p class="card-text">Dates: <%= item.start_date.strftime("%B %d, %Y") %> - <%= item.end_date.strftime("%B %d, %Y") %></p>
       <p class="card-text">Organization : <%= link_to Org.find(item.org_id).name, {controller: "orgs", :action => 'show', :id => item.org_id} -%></p>
     </div>
   </div>
