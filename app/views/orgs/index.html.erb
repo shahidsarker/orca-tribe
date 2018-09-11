@@ -4,6 +4,18 @@
 
 <% @orgs.each do |item| %>
 
-<p> <%= item.name %> </p>
+<p> <%= item.name %>
+  <%= link_to like_org_path(item), method: :put do %>
+    Upvotes
+    <%= item.get_upvotes.size %>
+  <% end %>
+
+  <%= link_to dislike_org_path(item), method: :put do %>
+    Downvote
+    <%= item.get_downvotes.size %>
+  <% end %>
+</p>
+
+
 
 <% end %>

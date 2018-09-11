@@ -49,15 +49,17 @@ class OrgsController < ApplicationController
   end
 
   def upvote
-    @opp = Opp.find(params[:id])
-    @opp.upvote_by current_user
-    redirect_to :back
+    @org = Org.find(params[:id])
+    @org.upvote_by current_user
+    redirect_back(fallback_location: root_path)
+
   end
 
   def downvote
-    @opp = Opp.find(params[:id])
-    @opp.downvote_by current_user
-    redirect_to :back
+    @org = Org.find(params[:id])
+    @org.downvote_by current_user
+    redirect_back(fallback_location: root_path)
+
   end
 
   private
