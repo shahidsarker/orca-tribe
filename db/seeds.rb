@@ -183,7 +183,7 @@ orgs_list.each_pair do |org_id,opp_array|
   org_thumb = org_detail_response['organization']['thumbnail_url']
   org_phone = 'n/a'
   api_organization_id = org_detail_response['organization']['organization_id'].to_i
-  this_org = Org.create(name: org_name,
+  this_org = Org.create!(name: org_name,
                         summary: org_summary,
                         address: org_address,
                         website: org_url,
@@ -204,7 +204,7 @@ orgs_list.each_pair do |org_id,opp_array|
     opp_address = "#{opp_add_hash['street1']} #{opp_add_hash['street2']}, #{opp_add_hash['locality']}, #{opp_add_hash['region']}, #{opp_add_hash['postalcode']}"
     api_opportunity_id = opp_detail_response['opportunity']['organization_id'].to_i
 
-    Opp.create(title: opp_title,
+    Opp.create!(title: opp_title,
                start_date:  opp_start,
                end_date:  opp_end,
                summary: opp_summary,
