@@ -1,12 +1,8 @@
 <%#  Single opportunity page %>
 <%#  Using @org here %>
 
-<%= @org.name %>
-
-
-
 <%= link_to like_org_path(@org), method: :put do %>
-  Upvote
+  Upvotes
   <%= @org.get_upvotes.size %>
 <% end %>
 
@@ -15,5 +11,7 @@
   <%#= @link.get_downvotes.size %>
 <%# end %>
 
-
-<%= @current_person.first_name %>
+<p><%= @org.name %> </p>
+<p> Mission Statement : <%= @org.summary %> </p>
+<p> Address : <%= @org.address %> </p>
+<p> Website : <a href ='<%= @org.website %>'><%= @org.website %></a> </p>

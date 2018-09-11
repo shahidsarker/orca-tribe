@@ -1,2 +1,19 @@
 <%#  Single organization profile page %>
 <%#  Using @opp here %>
+
+<p> Title :<%= @opp.title %> </p>
+<p>Dates : <%= @opp.start_date.strftime("%B %d, %Y") %> - <%= @opp.end_date.strftime("%B %d, %Y") %> </p>
+
+<p> Description : <%= @opp.summary%>
+<p> Volunteer(s) needed: <%= @opp.vol_request %>
+<p>Ongoing : 
+<% if @opp.recurrence %>
+    YES
+<% else %>
+    NO
+<% end %>
+</p>         
+   <p>Location: <%=@opp.location%></p>
+   <p>Requirements:<%= sanitize @opp.requirement %></p>
+
+  
