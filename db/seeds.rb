@@ -175,21 +175,21 @@ orgs_list.each_pair do |org_id,opp_array|
   end
 
   org_name = org_detail_response['organization']['title']
-  pp org_name
+  # pp org_name
   org_summary = org_detail_response['organization']['summary']
-  pp org_summary
+  # pp org_summary
   org_add_hash = org_detail_response['organization']['organization_contact'][0]
-  pp org_add_hash
+  # pp org_add_hash
   org_address = "#{org_add_hash['street1']} #{org_add_hash['street2']}, #{org_add_hash['locality']}, #{org_add_hash['region']}, #{org_add_hash['postalcode']}"
-  pp org_address
+  # pp org_address
   org_url = org_detail_response['organization']['organization_url']
-  pp org_url
+  # pp org_url
   org_thumb = org_detail_response['organization']['thumbnail_url']
-  pp org_thumb
+  # pp org_thumb
   org_phone = 'n/a'
-  pp org_phone
+  # pp org_phone
   api_organization_id = org_detail_response['organization']['organization_id'].to_i
-  pp api_organization_id
+  # pp api_organization_id
   this_org = Org.create(name: org_name,
              summary: org_summary,
              address: org_address,
@@ -201,25 +201,25 @@ orgs_list.each_pair do |org_id,opp_array|
   opp_array.each do |opp_id|
     opp_detail_response = HTTParty.get("https://api.nycservice.org/opportunities/index.php?rest_key=#{NYCSERV_KEY}&account_id=#{NYCSERV_ID}&output=json&opp_id=#{opp_id}")
     opp_title = opp_detail_response['opportunity']['title']
-    pp opp_title
+    # pp opp_title
     opp_start = Time.at(opp_detail_response['opportunity']['start_date'].to_i)
-    pp opp_start
+    # pp opp_start
     opp_end = Time.at(opp_detail_response['opportunity']['end_date'].to_i)
-    pp opp_end
+    # pp opp_end
     opp_summary = opp_detail_response['opportunity']['summary']
-    pp opp_summary
+    # pp opp_summary
     opp_vols = opp_detail_response['opportunity']['vol_requests'].to_i
-    pp opp_vols
+    # pp opp_vols
     opp_recurrence = opp_detail_response['opportunity']['recurrence_type'] == 'ongoing'
-    pp opp_recurrence
+    # pp opp_recurrence
     opp_reqs = opp_detail_response['opportunity']['requirements']
-    pp opp_reqs
+    # pp opp_reqs
     opp_add_hash = opp_detail_response['opportunity']['lccontact'][0]
-    pp opp_add_hash
+    # pp opp_add_hash
     opp_address = "#{opp_add_hash['street1']} #{opp_add_hash['street2']}, #{opp_add_hash['locality']}, #{opp_add_hash['region']}, #{opp_add_hash['postalcode']}"
-    pp opp_address
+    # pp opp_address
     api_opportunity_id = opp_detail_response['opportunity']['organization_id'].to_i
-    pp api_opportunity_id
+    # pp api_opportunity_id
 
       Opp.create(title: opp_title,
                  start_date:  opp_start,
