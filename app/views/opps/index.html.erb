@@ -1,6 +1,16 @@
 <%#  Listing of all organizations here %>
 <%#  Using @opps here %>
 
-<h1>Test</h1>
-<p>testing to see if this renders
+<% @opps.each_with_index do |item, index| %>
+    <p> <%= index +1 %> <p>
+   <p>Title:<%= link_to item.title, { :action => 'show', :id => item.id} -%>
+   
+   </p>
+   <p>Description: <%= item.summary %></p>
+   <p>Dates : <%= item.start_date.strftime("%B %d, %Y") %> - <%= item.end_date.strftime("%B %d, %Y") %> </p>
+   
+
+   <p>Organization : 
+<%= link_to Org.find(item.org_id).name, {controller: "orgs", :action => 'show', :id => item.org_id} -%>
 </p>
+<% end %>
