@@ -4,7 +4,8 @@
 
 <% @orgs.each do |item| %>
 
-<p><a href="/orgs/<%=item.id%>"> <%= item.name %> </a>
+<p><a href="/orgs/<%=item.id%>"> <%= item.name %> </a> :
+
   <%= link_to like_org_path(item), method: :put do %>
     Upvotes
     <%= item.get_upvotes.size %>
