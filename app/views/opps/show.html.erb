@@ -1,3 +1,15 @@
 <%#  Single organization profile page %>
 <%#  Using @opp here %>
-# this is a test for git stuff
+
+<p> <%= @opp.title %> </p>
+
+<p>Ongoing : <% if @opp.recurrence %>
+                 YES
+                 <% else %>
+                 NO
+                 <% end %>
+   </p>         
+   <p>Location: <%=@opp.location%></p>
+   <p>Requirements:<%= sanitize @opp.requirement %></p>
+
+  
