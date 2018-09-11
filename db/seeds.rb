@@ -125,6 +125,7 @@
     #     api_opp_id: 34,
     #     org_id: 1
     # )
+
 require 'httparty'
 
 NYCSERV_KEY = ENV['NYCSERV_KEY']
@@ -218,7 +219,7 @@ orgs_list.each_pair do |org_id,opp_array|
     # pp opp_add_hash
     opp_address = "#{opp_add_hash['street1']} #{opp_add_hash['street2']}, #{opp_add_hash['locality']}, #{opp_add_hash['region']}, #{opp_add_hash['postalcode']}"
     # pp opp_address
-    api_opportunity_id = opp_detail_response['opportunity']['organization_id'].to_i
+    api_opportunity_id = opp_detail_response['opportunity']['opportunity_id'].to_i
     # pp api_opportunity_id
 
       Opp.create(title: opp_title,
