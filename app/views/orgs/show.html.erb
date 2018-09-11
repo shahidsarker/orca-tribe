@@ -1,6 +1,16 @@
 <%#  Single opportunity page %>
 <%#  Using @org here %>
 
+<%= link_to like_org_path(@org), method: :put do %>
+  Upvotes
+  <%= @org.get_upvotes.size %>
+<% end %>
+
+<%= link_to dislike_org_path(@org), method: :put do %>
+  Downvote
+  <%= @org.get_downvotes.size %>
+<% end %>
+
 <p><%= @org.name %> </p>
 <p> Mission Statement : <%= @org.summary %> </p>
 <p> Address : <%= @org.address %> </p>
