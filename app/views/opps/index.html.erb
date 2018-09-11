@@ -6,8 +6,14 @@
    <p>Title: <%= item.title %></p>
    <p>Description: <%= item.summary %></p>
    <p>Dates : <%= item.start_date.strftime("%B %d, %Y") %> - <%= item.end_date.strftime("%B %d, %Y") %> </p>
+   <p> Ongoing : <% if item.recurrence %>
+                YES
+                <% else %>
+                NO
+                <% end %>
+            
    <p>Location: <%=item.location%></p>
-   Requirements :  <%= sanitize item.requirement  %>
+   Requirements:<%= sanitize item.requirement %>
 
 
    <p>Organization : Something</p>
