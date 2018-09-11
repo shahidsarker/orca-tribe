@@ -2,12 +2,18 @@
 <%#  Using @org here %>
 
 <%= @org.name %>
-<%= @org.votes_for.size %>
 
-<%# if session[:user_id] %>
-  <%# link_to 'VOTE', (@org.liked_by(@current_person))  %>
+
+
+<%= link_to like_org_path(@org), method: :put do %>
+  Upvote
+  <%= @org.get_upvotes.size %>
+<% end %>
+
+<%#= link_to dislike_org_path(@org), method: :put do %>
+<!--  Downvote-->
+  <%#= @link.get_downvotes.size %>
 <%# end %>
 
-<%= @current_person.first_name %>
 
-<input type="button" onclick="window.location = '/vote'">
+<%= @current_person.first_name %>

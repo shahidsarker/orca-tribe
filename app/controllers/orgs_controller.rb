@@ -48,11 +48,16 @@ class OrgsController < ApplicationController
     end
   end
 
-  def vote
-    @org = Org.find(params[:id])
-    @current_person = current_user
-    # @current_person.votes(@org)
-    @org.liked_by @current_person
+  def upvote
+    @opp = Opp.find(params[:id])
+    @opp.upvote_by current_user
+    redirect_to :back
+  end
+
+  def downvote
+    @opp = Opp.find(params[:id])
+    @opp.downvote_by current_user
+    redirect_to :back
   end
 
   private

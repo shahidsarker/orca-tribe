@@ -11,8 +11,13 @@ get '/profile' => 'welcome_page#specific_user'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   # root 'opps#index'  
   # devise_for :users
-  resources :orgs
+  # resources :orgs
   resources :opps
 
-  get 'orgs/:id/vote', to: 'orgs#vote'
+  resources :orgs do
+    member do
+      put "like", to: "orgs#upvote"
+      put "dislike", to: "orgs#downvote"
+    end
+  end
 end
