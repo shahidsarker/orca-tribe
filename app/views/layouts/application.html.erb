@@ -29,11 +29,26 @@
           <!-- Navbar Menu -->
           <div id="navbarcollapse" class="collapse navbar-collapse">
             <ul class="navbar-nav ml-auto">
-              <li class="nav-item"><a href="/" class="nav-link">Home</a>
-              </li>
-              <li class="nav-item"><a href="/about" class="nav-link">About</a>
-              <li class="nav-item"><a href="/opps" class="nav-link ">Opportunities</a>
-              </li>
+              <li class="nav-item"><a href="/" class="nav-link">Home</a></li>
+              <% if session[:user_id] %>
+
+                  <!-- only show this code when signed in -->
+
+                  <!-- clicking on this link will hit the get "/sign-out" route -->
+                  <li class="nav-item"><a href="/users/sign_out" class="nav-link">Sign out</a>
+                  </li>
+
+                <% else %>
+
+                  <!-- only show this code when signed out -->
+                  <li class="nav-item"><a href="/users/sign_in" class="nav-link">Log In</a>
+                  </li>
+                  <li class="nav-item"><a href="/users/sign_up" class="nav-link">Sign Up</a>
+                  </li>
+                
+                <% end %>
+              <li class="nav-item"><a href="/about" class="nav-link">About</a></li>
+              <li class="nav-item"><a href="/opps" class="nav-link ">Opportunities</a></li>
             </ul>
           </div>
         </div>
@@ -57,9 +72,15 @@
         <main class="posts-listing col-lg-8"> 
           <div class="container">
             <div class="row">
-              <%# IB : see _alerts.html.erb to style alerts  %>
-              <%= render 'layouts/alerts' %>
-              <%= yield %>
+              <div class="post-single">
+                <div class="post-details">
+                  <div class="post-body">
+                    <%# IB : see _alerts.html.erb to style alerts  %>
+                    <%= render 'layouts/alerts' %>
+                    <%= yield %>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </main>
@@ -156,7 +177,6 @@
         </div>
       </div>
     </footer>
-
 
 
   </body>
