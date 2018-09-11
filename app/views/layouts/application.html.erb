@@ -7,11 +7,157 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+        <!-- Google fonts - Merriweather-->
+    <link href="https://fonts.googleapis.com/css?family=Merriweather" rel="stylesheet"
   </head>
 
   <body>
-     <%# IB : see _alerts.html.erb to style alerts  %>
-     <%= render 'layouts/alerts' %>
-    <%= yield %>
+    <header class="header">
+      <!-- Main Navbar-->
+      <nav class="navbar navbar-expand-lg">
+      
+        <div class="container">
+          <!-- Navbar Brand -->
+          <div class="navbar-header d-flex align-items-center justify-content-between">
+            <!-- Toggle Button-->
+            <button type="button" data-toggle="collapse" data-target="#navbarcollapse" aria-controls="navbarcollapse" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler">
+            <span class="navbar-toggler-icon"><i class="fas fa-bars"></i></span>
+            </button>
+            <!-- Navbar Brand -->
+            <a href="/" class="navbar-brand">Volunteer, volunteer?</a>
+          </div>
+          <!-- Navbar Menu -->
+          <div id="navbarcollapse" class="collapse navbar-collapse">
+            <ul class="navbar-nav ml-auto">
+              <li class="nav-item"><a href="/" class="nav-link">Home</a>
+              </li>
+              <li class="nav-item"><a href="/about" class="nav-link">About</a>
+              <li class="nav-item"><a href="/opps" class="nav-link ">Opportunities</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Hero Section-->
+        <section style="background: url('hero1.jpg'); background-size: cover; background-position: center center" class="hero">
+          <div class="container">
+            <div class="row">
+              <div class="col-lg-7">
+                <h1>Tag line here</h1><a href="/about" class="hero-link">Link to More</a>
+              </div>
+            </div>
+          </div>
+        </section>
+
+      <div class="container">
+        <div class="row">
+
+        <main class="posts-listing col-lg-8"> 
+          <div class="container">
+            <div class="row">
+              <%# IB : see _alerts.html.erb to style alerts  %>
+              <%= render 'layouts/alerts' %>
+              <%= yield %>
+            </div>
+          </div>
+        </main>
+
+        <aside class="col-lg-4">
+          
+          <!-- Sidebar[Search Bar Sidebar]-->
+          <div class="sidebar search">
+            <header>
+              <h3 class="h6">Search??</h3>
+            </header>
+            <!-- update what search action does -->
+            <form action="#" class="search-form">
+              <div class="form-group">
+                <input type="search" placeholder="What are you looking for?">
+                <button type="submit" class="submit"><i class="fas fa-search"></i></button>
+              </div>
+            </form>
+          </div>
+
+          <!-- Sidebar [Categories Sidebar]-->
+          <div class="sidebar categories">
+            <header>
+              <h3 class="h6">Categories?</h3>
+            </header>
+            <div class="item d-flex justify-content-between"><a href="#">Cat 1?</a><span>12</span></div>
+            <div class="item d-flex justify-content-between"><a href="#">Cat 2?</a><span>25</span></div>
+            <div class="item d-flex justify-content-between"><a href="#">Cat 3?</a><span>8</span></div>
+            <div class="item d-flex justify-content-between"><a href="#">Cat 4?</a><span>17</span></div>
+            <div class="item d-flex justify-content-between"><a href="#">Cat 5?</a><span>25</span></div>
+          </div>   
+        </aside>
+      </div>
+    </div>
+
+    
+    <!-- Page Footer-->
+    <footer class="main-footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4">
+            <div class="logo">
+              <h6 class="text-white">Volunteer</h6>
+            </div>
+            <div class="contact-details">
+              <p>Adress 1</p>
+              <p>Address 2?</p>
+              <p>Phone: (787) 123 4567 </p>
+              <p>Email: <a href="mailto:info@company.com">help@volunteer.com</a></p>
+              <ul class="social-menu">
+                <li class="list-inline-item"><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                <li class="list-inline-item"><a href="#"><i class="fab fa-twitter"></i></a></li>
+                <li class="list-inline-item"><a href="#"><i class="fab fa-pinterest-p"></i></a></li>
+                <li class="list-inline-item"><a href="#"><i class="fab fa-instagram"></i></a></li>
+                
+              </ul>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="menus d-flex">
+              <ul class="list-unstyled">
+                <li> <a href="/users">Our Team</a></li>
+                <li> <a href="/posts">All Organizations</a></li>
+                <li> <a href="/login">All Opportunities</a></li>
+                <li> <a href="/">Sign up for Newsletter</a></li>
+              </ul>
+              <ul class="list-unstyled">
+                <li> <a href="/">Home Page</a></li>
+                <li> <a href="/about">About US</a></li>
+                <li> <a href="/contact">Contact Us</a></li>
+                <li> <a href="/signup">Create an Account</a></li>
+              </ul>
+            </div>
+          </div>
+          <!-- HOPE TO MAKE THIS SECTION A RECENT LINK WITH THUMBNAIL, INFO.-->
+          <div class="col-md-4">
+            <div class="latest-posts">
+                <p>latst postings can go here?</p>
+                </div>
+          </div>
+        </div>
+      </div>
+      <div class="copyrights">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-6">
+              <p>&copy; 2018. All rights reserved.</p>
+            </div>
+            <div class="col-md-6 text-right">
+              <p>A site by <a href="https://github.com" class="text-white">Orca Tribe</a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+
+
   </body>
 </html>
