@@ -1,9 +1,10 @@
-class OrgController < ApplicationController
+class OrgsController < ApplicationController
     # before_action :authenticate_user! 
 
     # list method shows all orgs
     def index
       @orgs = Org.all
+    
     end
     # show method - specific org profile page
     def show
