@@ -4,6 +4,6 @@
 
 <% @orgs.each do |item| %>
 
-<p> <%= item.name %> </p>
+<a href="/orgs/<%=item.id%>"> <%= item.name %> </a>
 
 <% end %>
