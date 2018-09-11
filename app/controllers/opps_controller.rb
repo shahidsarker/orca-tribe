@@ -1,4 +1,4 @@
-class OppController < ApplicationController
+class OppsController < ApplicationController
     # before_action :authenticate_user!
     # list method - shows all opps
     def index
