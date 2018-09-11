@@ -3,14 +3,16 @@
 
 <% @opps.each_with_index do |item, index| %>
     <p> <%= index +1 %> <p>
-   <p>Title: <%= item.title %></p>
+   <p>Title:<%= link_to item.title, { :action => 'show', :id => item.id} -%>
+   
+   </p>
    <p>Description: <%= item.summary %></p>
    <p>Dates : <%= item.start_date.strftime("%B %d, %Y") %> - <%= item.end_date.strftime("%B %d, %Y") %> </p>
    
 
-   <p>Organization : <%= Org.find(item.org_id).name %></p>
-    <%= link_to 'more info', {controller: "orgs", :action => 'show', :id => item.org_id} -%>
-
+   <p>Organization : 
+<%= link_to Org.find(item.org_id).name, {controller: "orgs", :action => 'show', :id => item.org_id} -%>
+</p>
 <% end %>
 
 
