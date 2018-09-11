@@ -1,5 +1,5 @@
 <%#  Listing of all organizations here %>
-<%#  Using @orgs here %>
+<%#  Using @opps here %>
 
 <% @opps.each_with_index do |item, index| %>
     <p> <%= index +1 %> <p>
@@ -14,5 +14,3 @@
 <%= link_to Org.find(item.org_id).name, {controller: "orgs", :action => 'show', :id => item.org_id} -%>
 </p>
 <% end %>
-
-
