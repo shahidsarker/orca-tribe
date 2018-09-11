@@ -1,16 +1,29 @@
 <%#  Listing of all organizations here %>
 <%#  Using @opps here %>
+<%#  <p> <%= index +1 %>
+
 
 <% @opps.each_with_index do |item, index| %>
-    <p> <%= index +1 %> <p>
-   <p>Title:<%= link_to item.title, { :action => 'show', :id => item.id} -%>
-   
-   </p>
-   <p>Description: <%= item.summary %></p>
-   <p>Dates : <%= item.start_date.strftime("%B %d, %Y") %> - <%= item.end_date.strftime("%B %d, %Y") %> </p>
-   
 
-   <p>Organization : 
-<%= link_to Org.find(item.org_id).name, {controller: "orgs", :action => 'show', :id => item.org_id} -%>
-</p>
+<div class="row ">
+  <div class="col-lg-3">
+    <h4 class="card-title">Opportunity</h4>
+    <% if item.org.thumbnail? %>
+    <%= image_tag item.org.thumbnail, class: 'w-100' %>
+    <% else %>
+    <%= image_tag "https://placeholdit.imgix.net/~text?txtsize=38&txt=400%C3%97400&w=400&h=400", class: 'w-100' %>
+    <% end %>
+    <p>id: <%= item.id %></p>
+  </div>
+
+  <div class="col-lg-9 px-3">
+    <div class="card-block px-3">
+      <h4 class="card-title"><%= link_to item.title, { :action => 'show', :id => item.id} -%></h4>
+      <p class="card-text">Description: <%= item.summary %></p>
+      <p class="card-text">Dates : <%= item.start_date.strftime("%B %d, %Y") %> - <%= item.end_date.strftime("%B %d, %Y") %></p>
+      <p class="card-text">Organization : <%= link_to Org.find(item.org_id).name, {controller: "orgs", :action => 'show', :id => item.org_id} -%></p>
+    </div>
+  </div>
+</div>
+<hr>
 <% end %>
