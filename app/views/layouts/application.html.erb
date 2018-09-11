@@ -72,9 +72,15 @@
         <main class="posts-listing col-lg-8"> 
           <div class="container">
             <div class="row">
-              <%# IB : see _alerts.html.erb to style alerts  %>
-              <%= render 'layouts/alerts' %>
-              <%= yield %>
+              <div class="post-single">
+                <div class="post-details">
+                  <div class="post-body">
+                    <%# IB : see _alerts.html.erb to style alerts  %>
+                    <%= render 'layouts/alerts' %>
+                    <%= yield %>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </main>
