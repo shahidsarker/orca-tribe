@@ -5,34 +5,23 @@
 	<div class="card border-warning">
 		<div class="card-body">
 		  <div class="row">
-		      
 		        <div class="card-header w-100"><%= @org.name%></div>
             <div class="card-body">
               <h5 class="card-title"><%= @org.name%></h5>
               <p class="card-text">
-                <%= link_to like_org_path(@org), method: :put do %>
-                  Upvotes
-                  <%= @org.get_upvotes.size %>
-                <% end %>
-                <%= link_to dislike_org_path(@org), method: :put do %>
-                  Downvote
-                  <%= @org.get_downvotes.size %>
-                <% end %>
+          <%= render "orgs/likes" %>
               </p>
               <p class="card-text">Mission Statement : <%= @org.summary %></p>
               <p class="card-text">Address : <%= @org.address %></p>
               <p class="card-text">Website : <a href ='<%= @org.website %>'><%= @org.website %></a></p>
             </div>
           </div>
-		  
-
   </div>
 </div>
 <hr>
 
 
 <h3>Current Opportunities</h3>
-
 
 
       <div class="row">
@@ -48,7 +37,7 @@
                                   <sub>id:  <%= item.id %>, <%= link_to 'More info', @org.website %></a></sub>
                                     </div>
                                   
-                              </div>
+                                </div>
                       </div>
-                      
   <% end %>
+</div>

@@ -2,21 +2,14 @@
 <%#  Using @orgs here %>
 
 
-<% @orgs.each do |item| %>
+<% @orgs.each do |org| %>
+<p><a href="/orgs/<%=org.id%>"> <%= org.name %> </a> :
 
-<p><a href="/orgs/<%=item.id%>"> <%= item.name %> </a> :
+<!--  Like/Unlike Section-->
+    <%= octicon "heart" %>
+    <%= org.get_likes.size %>
+    Likes
 
-  <%= link_to like_org_path(item), method: :put do %>
-    Upvotes
-    <%= item.get_upvotes.size %>
-  <% end %>
 
-  <%= link_to dislike_org_path(item), method: :put do %>
-    Downvote
-    <%= item.get_downvotes.size %>
-  <% end %>
 </p>
-
-
-
 <% end %>
