@@ -35,7 +35,7 @@
                   <!-- only show this code when signed in -->
                   <li class="nav-item"><a href="/profile" class="nav-link">Profile</a></li>                 
 
-                   <li class="nav-item"> <%= link_to 'Sign out' , destroy_user_session_path, method: :delete , class: 'nav-link'%>
+                  <li class="nav-item"> <%= link_to 'Sign out' , destroy_user_session_path, method: :delete , class: 'nav-link'%>
                   </li>
 
                 <% else %>
@@ -126,21 +126,21 @@
 
   <section>
       <div class="container">
-         <div class="row">
+        <div class="row">
             <div class="col-md-3">
-               <span class="text-center">subscribe to receive the latest news, events &amp; updates.</span>
+              <span class="text-center">subscribe to receive the latest news, events &amp; updates.</span>
             </div>
             <div class="col-sm-6">
-               <div class="form-group">
+              <div class="form-group">
                   <form action="" method="post">
-                     <label class="sr-only" for="newsletterFooter">Enter your email address</label> <input name="newsletterEmail" id="newsletterFooter" class="form-control h5-email validate[required]" placeholder="Enter your email address" type="text" value="" >
-               </div>
+                    <label class="sr-only" for="newsletterFooter">Enter your email address</label> <input name="newsletterEmail" id="newsletterFooter" class="form-control h5-email validate[required]" placeholder="Enter your email address" type="text" value="" >
+              </div>
             </div>
             <div class="col-sm-6 col-md-3">
-            <button class="btn btn-transparent btn-lg" type="submit">subscribe</button>
+            <button class="btn btn-transparent btn-lg border-warning" type="submit">subscribe</button>
             </form>
             </div>
-         </div>
+        </div>
       </div>
     <hr>
 </section>
@@ -185,7 +185,15 @@
           <!-- HOPE TO MAKE THIS SECTION A RECENT LINK WITH THUMBNAIL, INFO.-->
           <div class="col-md-4">
             <div class="latest-posts">
-                <p>latest postings can go here?</p>
+
+            <% @orgs.each do |org| %>
+              <a href="/orgs/<%= org.id%>">
+                <div class="post d-flex align-items-center">
+                <div class="image"><img src="<%= org.thumbnail%>" alt="..." class="img-fluid"></div>
+                  <div class="title"><strong><%= org.name %> </strong></div>
+                </div></a>
+              <% end %>
+                
                 </div>
           </div>
         </div>
