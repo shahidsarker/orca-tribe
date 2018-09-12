@@ -1,0 +1,21 @@
+<% if current_user %>
+  <% if !current_user.liked? @org %>
+
+    <%= link_to like_org_path(@org), method: :put do %>
+      <%= octicon "heart" %>
+      <%= @org.get_likes.size %>
+      Likes
+    <% end %>
+  <% else %>
+
+    <%= link_to unlike_org_path(@org), method: :put do %>
+      <%= octicon "heart" %>
+      <%= @org.get_likes.size %>
+      Likes
+    <% end %>
+  <% end %>
+<% else %>
+  <%= octicon "heart" %>
+  <%= @org.get_likes.size %>
+  Likes
+<% end %>

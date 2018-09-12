@@ -50,16 +50,16 @@ class OrgsController < ApplicationController
     end
   end
 
-  def upvote
+  def like
     @org = Org.find(params[:id])
-    @org.upvote_by current_user
+    @org.liked_by current_user
     redirect_back(fallback_location: root_path)
 
   end
 
-  def downvote
+  def unlike
     @org = Org.find(params[:id])
-    @org.downvote_by current_user
+    @org.unliked_by current_user
     redirect_back(fallback_location: root_path)
 
   end
