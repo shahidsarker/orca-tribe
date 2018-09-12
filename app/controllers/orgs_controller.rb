@@ -11,6 +11,8 @@ class OrgsController < ApplicationController
   def show
     @org = Org.find(params[:id])
     @current_person = current_user
+    
+ 
   end
 
   def new
