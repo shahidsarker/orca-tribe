@@ -23,7 +23,6 @@
 
 <h3>Current Opportunities</h3>
 
-
       <div class="row">
       <% @org_opps.each do |item| %>
                       <div class="col-md-6">
@@ -34,7 +33,7 @@
                                 <div class="card-body text-muted">
                                   <p class="card-text"><%= item.summary.truncate(100) %> </a> </p>
                                   
-                                  <sub>id:  <%= item.id %>, <%= link_to 'More info', @org.website %></a></sub>
+                                  <sub>id:  <%= item.id %>, <%= link_to "More info", opp_path(item.id) %></a></sub>
                                     </div>
                                   
                                 </div>
