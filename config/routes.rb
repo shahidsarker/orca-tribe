@@ -7,6 +7,7 @@ Rails.application.routes.draw do
 
  
 get '/profile' => 'welcome_page#specific_user'
+get '/profile/:id/edit' => 'welcome_page#edit'
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   # root 'opps#index'  
