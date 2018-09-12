@@ -33,9 +33,9 @@
               <% if session[:user_id] %>
 
                   <!-- only show this code when signed in -->
+                  <li class="nav-item"><a href="/profile" class="nav-link">Profile</a></li>                 
 
-                  <!-- clicking on this link will hit the get "/sign-out" route -->
-                  <li class="nav-item"><a href="/users/sign_out" class="nav-link">Sign out</a>
+                   <li class="nav-item"> <%= link_to 'Sign out' , destroy_user_session_path, method: :delete , class: 'nav-link'%>
                   </li>
 
                 <% else %>
