@@ -2,7 +2,7 @@
 <%#  Using @org here %>
 
 
-	<div class="card">
+	<div class="card border-warning">
 		<div class="card-body">
 		  <div class="row">
 		      
@@ -38,14 +38,16 @@
       <div class="row">
       <% @org_opps.each do |item| %>
                       <div class="col-md-6">
-                        <div class="card bg-light mb-3">
-                                <div class="card-header"><%= item.title %></div>
-                                <div class="card-body">
-                                  <h5 class="card-title"><%= item.start_date.strftime("%B %d, %Y") %> - <%= item.end_date.strftime("%B %d, %Y") %></h5>
-                                  <p class="card-text"><%= item.summary %> </a> </p>
-                                  <p> <%= item.id %> </p>   
-
+                        <div class="card border-warning bg-light mb-3">
+                                <div class="card-header"><%= item.title.truncate(35) %><br>
+                                <sub class="card-title"><%= item.start_date.strftime("%B %d, %Y") %> - <%= item.end_date.strftime("%B %d, %Y") %></sub>
                                 </div>
+                                <div class="card-body text-muted">
+                                  <p class="card-text"><%= item.summary.truncate(100) %> </a> </p>
+                                  
+                                  <sub>id:  <%= item.id %>, <%= link_to 'More info', @org.website %></a></sub>
+                                    </div>
+                                  
                               </div>
                       </div>
                       
