@@ -1,5 +1,5 @@
 
-      <h2>Edit your account<%= resource_name.to_s.humanize %></h2>
+      <h2>Edit your account, <%= current_user.first_name %></h2>
 
       <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
         <%= devise_error_messages! %>
@@ -26,18 +26,47 @@
           <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
         </div>
 
+
         <div class="field">
           <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
           <%= f.password_field :current_password, autocomplete: "current-password" %>
         </div>
+        
+
+        <div class="field">
+          <%= f.label :first_name %>
+          <%= f.text_field :first_name, autofocus: true, autocomplete: "email" %>
+        </div>
+
+         <div class="field">
+          <%= f.label :last_name %>
+          <%= f.text_field :last_name, autofocus: true, autocomplete: "email" %>
+        </div>
+
+         <div class="field">
+          <%= f.label :location %>
+          <%= f.text_field :location, autofocus: true, autocomplete: "location" %>
+        </div>
+
+         <div class="field">
+          <%= f.label :avatar %>
+          <%= f.text_field :avatar, autofocus: true, autocomplete: "avatar" %>
+        </div>
+
+        <div class="field">
+          <%= f.label :bio %>
+          <%= f.text_area :bio, :cols => 30, :rows => 10 , autofocus: true, autocomplete: "bio" %>
+         
+
+        </div>
 
         <div class="actions">
-          <%= f.submit "Update" %>
+          <%= f.submit "Update", class: "btn btn-outline-success" %>
         </div>
       <% end %>
 
       <h3>Cancel my account</h3>
 
-      <p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
+      <p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete ,  class: "btn btn-outline-danger"%></p>
 
       <%= link_to "Back", :back %>

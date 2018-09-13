@@ -9,7 +9,7 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.2]
       t.string :first_name,         null: false, default: ""
       t.string :last_name,          null: false, default: ""
       t.string :location,           null: false, default: ""
-      t.string :avatar,             null: false, default: ""
+      t.string :avatar,             null: false, default: "//assets/default_user.png"
       t.text   :bio,                null: false, default: ""
 
       ## Recoverable
