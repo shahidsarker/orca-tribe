@@ -20,7 +20,7 @@
 
 body {
   overflow-x: hidden;
-  font-family: 'Merriweather', serif;
+  font-family: 'Montserrat', sans-serif;
 }
 
 a,
@@ -39,6 +39,9 @@ a {
   }
 }
 
+b {
+  font-weight: bolder;
+}
 span {
 
   &:hover,
@@ -60,7 +63,7 @@ section {
 button,
 input {
   outline: none !important;
-  font-family: 'Merriweather', serif;
+  font-family: 'Montserrat', sans-serif;
 }
 
 button {
@@ -469,7 +472,7 @@ main.posts-listing {
       border: none;
       border-bottom: 1px solid #ffbb54;
       font-size: 0.95em;
-      font-family: 'Merriweather', serif;
+      font-family: 'Montserrat', sans-serif;
       font-weight: 400;
       background: none;
 
@@ -477,7 +480,7 @@ main.posts-listing {
       &::-webkit-input-placeholder,
       &:-ms-input-placeholder {
         color: #aaa;
-        font-family: 'Merriweather', serif;
+        font-family: 'Montserrat', sans-serif;
       }
     }
 
