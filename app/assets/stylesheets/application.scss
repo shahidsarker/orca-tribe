@@ -21,6 +21,7 @@
 body {
   overflow-x: hidden;
   font-family: 'Montserrat', sans-serif;
+  font-size: 16px;
 }
 
 a,
@@ -638,6 +639,7 @@ main.posts-listing {
     h5,
     h6 {
       color: #333;
+      font-weight: 600;
     }
 
     p {
