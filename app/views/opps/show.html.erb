@@ -3,27 +3,29 @@
 
 
 <h3><b>Opportunity Information</b></h3>
-	<div class="card border-warning">
-		<div class="card-body">
-		  <div class="row">
-          <div class="card-header w-100"><span><b><%= @opp.title%></b></span><br>
-          <sub class="card-title"><b>Dates:</b> <%= @opp.start_date.strftime("%B %d, %Y") %> - <%= @opp.end_date.strftime("%B %d, %Y") %></sub>
-          </div>
-              <div class="card-body">
-                <p class="card-text"><p><b>Description:</b> <%= @opp.summary%></p>
-                <p class="card-text"><b>Volunteer(s) needed:</b> <%= @opp.vol_request %></p>
-                <p class="card-text"><b>Ongoing:</b>
-                  <% if @opp.recurrence %>
-                    YES
-                  <% else %>
-                    NO</a>
-                  <% end %>
-                </p>
-                <p class="card-text"><b>Location:</b> <%=@opp.location%></p>
-                <p class="card-footer"><b>Requirements:</b> <%= sanitize @opp.requirement %></p>
-              </div>
+<div class="card border-warning">
+  <div class="card-body">
+    <div class="row">
+      <div class="card-header w-100"><span><b><%= @opp.title %></b></span><br>
+        <sub class="card-title"><b>Dates:</b> <%= @opp.start_date.strftime("%B %d, %Y") %>
+          - <%= @opp.end_date.strftime("%B %d, %Y") %></sub>
+      </div>
+      <div class="card-body">
+        <p class="card-text">
+        <p><b>Description:</b> <%= @opp.summary %></p>
+        <p class="card-text"><b>Volunteer(s) needed:</b> <%= @opp.vol_request %></p>
+        <p class="card-text"><b>Ongoing:</b>
+          <% if @opp.recurrence %>
+            YES
+          <% else %>
+            NO</a>
+          <% end %>
+        </p>
+        <p class="card-text"><b>Location:</b> <%= @opp.location %></p>
+        <p class="card-footer"><b>Requirements:</b> <%= sanitize @opp.requirement %></p>
       </div>
     </div>
   </div>
+</div>
   
 
