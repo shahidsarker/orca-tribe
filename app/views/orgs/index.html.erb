@@ -1,7 +1,7 @@
 <%#  Listing of all Opportunities here %>
 <%#  Using @orgs here %>
 
-
+<div class="container">
 <h3>Organizations</h3>
 <% @orgs.each_with_index do |org, index| %>
 <div class="row ">
@@ -9,7 +9,7 @@
     </div>
 
 
-  <div class="col-lg-3 m-auto ">
+  <div class="col-lg-3 m-auto">
     <% if org.thumbnail? %>
     <%= image_tag org.thumbnail, class: 'w-100' %>
     <% else %>
@@ -31,3 +31,4 @@
 </div>
 <hr>
 <% end %>
+</div>

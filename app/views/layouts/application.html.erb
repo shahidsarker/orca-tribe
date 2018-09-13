@@ -78,9 +78,11 @@
               <div class="post-single">
                 <div class="post-details">
                   <div class="post-body">
+                    
+                    <%= yield %>
                     <%# IB : see _alerts.html.erb to style alerts  %>
                     <%= render 'layouts/alerts' %>
-                    <%= yield %>
+                    
                   </div>
                 </div>
               </div>
