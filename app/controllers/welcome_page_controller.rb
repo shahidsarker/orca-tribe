@@ -6,8 +6,9 @@ class WelcomePageController < ApplicationController
 
     def edit
         if current_user
-        @user = User.find(params[:id])
-        puts @user
+        @user = User.find(current_user.id)
+        puts @user.first_name
+        
 
 
         else
