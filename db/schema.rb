@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_09_10_032640) do
+ActiveRecord::Schema.define(version: 2018_09_13_152252) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -22,12 +22,13 @@ ActiveRecord::Schema.define(version: 2018_09_10_032640) do
     t.text "summary"
     t.integer "vol_request"
     t.boolean "recurrence"
-    t.text "requirement"
+    t.text "requirement", default: ""
     t.string "location"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "api_opp_id"
     t.bigint "org_id"
+    t.string "borough"
     t.index ["org_id"], name: "index_opps_on_org_id"
   end
 
@@ -37,10 +38,10 @@ ActiveRecord::Schema.define(version: 2018_09_10_032640) do
     t.string "address"
     t.string "website"
     t.string "thumbnail"
-    t.string "phone"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "api_org_id"
+    t.string "borough"
   end
 
   create_table "user_opps", force: :cascade do |t|
