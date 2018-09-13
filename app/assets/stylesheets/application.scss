@@ -58,7 +58,6 @@ ul {
 
 section {
   padding: 20px 0;
-  overflow-x: hidden;
 }
 
 button,
@@ -139,11 +138,18 @@ h6 {
 }
 
 a.hero-link {
-  color: darkorange;
+  color: black;
+  text-shadow:
+    2px 2px 0 #fff,
+    -1px -1px 0 #fff,  
+    1px -1px 0 #fff,
+    -1px  1px 0 #fff,
+    1px  1px 0 #fff;
+  font-family: 'Alfa Slab One', cursive;
   text-transform: uppercase;
   font-size: 1em;
   text-decoration: none !important;
-  margin-top: 20px;
+  margin-top: 0px;
   font-weight: 300;
 }
 
@@ -199,15 +205,25 @@ a.hero-link {
 section {
   &.hero {
     padding: 0;
-    color: darkorange;
+    color: #222;
+    max-height: 300px;
 
     .container {
-      padding: 200px 20px;
+      padding: 190px 100px;
       position: relative;
     }
 
     h1 {
-      line-height: 1.2em;
+    color: black;
+    text-decoration: underline;
+    text-shadow:
+    3px 3px 0 #fff,
+    -1px -1px 0 #fff,  
+    1px -1px 0 #fff,
+    -1px  1px 0 #fff,
+    1px  1px 0 #fff;
+      font-family: 'Alfa Slab One', cursive;
+      line-height: .5em;
     }
   }
 }
