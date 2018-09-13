@@ -21,19 +21,19 @@
 <hr>
 
 
-<h3>Current Opportunities</h3> 
+<h4>Current Opportunities</h4> 
 
       <div class="row">
       <% @org_opps.each do |item| %>
                       <div class="col-md-6">
                         <div class="card border-warning bg-light mb-3">
-                                <div class="card-header"><%= item.title.truncate(35) %><br>
+                                <div class="card-header"><%= item.title.truncate(35).capitalize! %><br>
                                 <sub class="card-title"><%= item.start_date.strftime("%B %d, %Y") %> - <%= item.end_date.strftime("%B %d, %Y") %></sub>
                                 </div>
                                 <div class="card-body text-muted">
                                   <p class="card-text"><%= item.summary.truncate(100) %> </a> </p>
                                   
-                                  <sub>id:  <%= item.id %>, <%= link_to "More info", opp_path(item.id) %></a></sub>
+                                  <sub><%= link_to "More info", opp_path(item.id) %></a></sub>
                                     </div>
                                   
                                 </div>
