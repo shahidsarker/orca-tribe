@@ -20,11 +20,13 @@
 
 body {
   overflow-x: hidden;
-  font-family: 'Merriweather', serif;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 16px;
 }
 
 a,
 span {
+  color: darkorange;
   display: inline-block;
   text-decoration: none;
 }
@@ -38,6 +40,9 @@ a {
   }
 }
 
+b {
+  font-weight: bolder;
+}
 span {
 
   &:hover,
@@ -59,7 +64,7 @@ section {
 button,
 input {
   outline: none !important;
-  font-family: 'Merriweather', serif;
+  font-family: 'Montserrat', sans-serif;
 }
 
 button {
@@ -97,6 +102,13 @@ h1 {
   }
 }
 
+hr {
+  border: 0;
+  height: 1px;
+  background: darkorange;
+  background-image: linear-gradient(to right, #fff, darkorange, #fff);
+}
+
 //responsive map styles
 .map-responsive {
   overflow: hidden;
@@ -127,7 +139,7 @@ h6 {
 }
 
 a.hero-link {
-  color: inherit !important;
+  color: darkorange;
   text-transform: uppercase;
   font-size: 1em;
   text-decoration: none !important;
@@ -187,7 +199,7 @@ a.hero-link {
 section {
   &.hero {
     padding: 0;
-    color: #fff;
+    color: darkorange;
 
     .container {
       padding: 200px 20px;
@@ -354,8 +366,9 @@ footer.main-footer {
   }
 
   .latest-posts {
-
+    
     .image {
+      background-color: #ccc;
       max-width: 50px;
       padding: 4px;
       border: 2px solid #333;
@@ -460,7 +473,7 @@ main.posts-listing {
       border: none;
       border-bottom: 1px solid #ffbb54;
       font-size: 0.95em;
-      font-family: 'Merriweather', serif;
+      font-family: 'Montserrat', sans-serif;
       font-weight: 400;
       background: none;
 
@@ -468,7 +481,7 @@ main.posts-listing {
       &::-webkit-input-placeholder,
       &:-ms-input-placeholder {
         color: #aaa;
-        font-family: 'Merriweather', serif;
+        font-family: 'Montserrat', sans-serif;
       }
     }
 
@@ -626,6 +639,7 @@ main.posts-listing {
     h5,
     h6 {
       color: #333;
+      font-weight: 600;
     }
 
     p {
