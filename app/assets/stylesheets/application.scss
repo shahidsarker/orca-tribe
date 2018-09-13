@@ -30,6 +30,7 @@ span {
 }
 
 a {
+  color: darkgoldenrod;
 
   &:hover,
   &:focus {
@@ -89,7 +90,7 @@ h1 {
 .sidebar {
   margin-bottom: 40px;
   padding: 30px;
-  border: 1px solid #eee;
+  border: 1px solid #ffbb54;
 
   header {
     margin-bottom: 20px;
@@ -457,7 +458,7 @@ main.posts-listing {
       height: 40px;
       line-height: 40px;
       border: none;
-      border-bottom: 1px solid #ddd;
+      border-bottom: 1px solid #ffbb54;
       font-size: 0.95em;
       font-family: 'Merriweather', serif;
       font-weight: 400;
@@ -546,7 +547,7 @@ main.posts-listing {
   }
 
   &.categories .item {
-    background: #fafafa;
+    background: rgba(252, 221, 175, 0.5);
     padding: 10px;
     color: #777;
     font-weight: 700;
@@ -573,7 +574,7 @@ main.posts-listing {
 
   &.tags .tag {
     padding: 5px 25px;
-    border: 1px solid #ddd;
+    border: 1px solid #ffbb54;
     margin: 5px 0;
     color: #777;
     font-size: 0.75em;
@@ -642,9 +643,9 @@ main.posts-listing {
 blockquote.blockquote {
   font-size: 1.05em;
   line-height: 1.7em;
-  border-color: #999;
-  border: 1px solid #eee;
-  border-left: 6px solid #eee;
+  border-color: #ffbb54;
+  border: 1px solid #ffbb54;
+  border-left: 6px solid #ffbb54;
   padding: 20px;
   border-top-right-radius: 5px;
   border-bottom-right-radius: 5px;

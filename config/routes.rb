@@ -17,8 +17,8 @@ get '/profile/:id/edit' => 'welcome_page#edit'
 
   resources :orgs do
     member do
-      put "like", to: "orgs#upvote"
-      put "dislike", to: "orgs#downvote"
+      put "like", to: "orgs#like"
+      put "unlike", to: "orgs#unlike"
     end
   end
 end
