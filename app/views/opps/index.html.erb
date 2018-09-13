@@ -2,12 +2,13 @@
 <%#  Using @opps here %>
 <%#  <p> <%= index +1 %>
 
-
+<div class="container">
 <% @opps.each_with_index do |item, index| %>
 
-<div class="row ">
+<div class="row">
+  <div class="col-lg-12 card-header"><%= link_to item.title.capitalize! , { :action => 'show', :id => item.id} -%>
+  </div>
   <div class="col-lg-3">
-    <h4 class="card-title">Opportunity</h4>
     <% if item.org.thumbnail? %>
     <%= image_tag item.org.thumbnail, class: 'w-100' %>
     <% else %>
@@ -18,7 +19,6 @@
 
   <div class="col-lg-9 px-3">
     <div class="card-block px-3">
-      <h4 class="card-title"><%= link_to item.title, { :action => 'show', :id => item.id} -%></h4>
       <p class="card-text">Description: <%= item.summary %></p>
       <p class="card-text">Dates: <%= item.start_date.strftime("%B %d, %Y") %> - <%= item.end_date.strftime("%B %d, %Y") %></p>
       <p class="card-text">Organization : <%= link_to Org.find(item.org_id).name, {controller: "orgs", :action => 'show', :id => item.org_id} -%></p>
@@ -27,3 +27,4 @@
 </div>
 <hr>
 <% end %>
+</div>
