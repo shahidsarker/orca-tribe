@@ -27,7 +27,7 @@
       <% @org_opps.each do |item| %>
                       <div class="col-md-6">
                         <div class="card border-warning bg-light mb-3">
-                                <div class="card-header"><%= item.title.truncate(35).capitalize! %><br>
+                                <div class="card-header"><%= item.title.truncate(35) %><br>
                                 <sub class="card-title"><%= item.start_date.strftime("%B %d, %Y") %> - <%= item.end_date.strftime("%B %d, %Y") %></sub>
                                 </div>
                                 <div class="card-body text-muted">
