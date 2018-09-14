@@ -19,7 +19,7 @@ get '/profile' => 'welcome_page#specific_user'
   get '/manhattan' => 'opps#manhattan'
   get '/bronx' => 'opps#bronx'
   get '/statenisland' => 'opps#statenisland'
-  get '/brooklyn' => 'opps#brookyln'
+  get '/brooklyn' => 'opps#brooklyn'
   get '/otherarea' => 'opps#otherarea'
 
   resources :opps do
