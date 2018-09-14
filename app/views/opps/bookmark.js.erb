@@ -1,0 +1,3 @@
+$("#bookmark_<%= @opp.id %>").removeClass('text-danger').addClass('text-success');
+$("#bookmark_<%= @opp.id %>").attr("href", '/opps/<%= @event.id %>/unbookmark');
+$("#bookmark_<%= @opp.id %>").html("<%= j (render partial: opps/bookmark, locals: { event: @opp } ) %>");

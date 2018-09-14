@@ -36,6 +36,29 @@
               </div>
             </div>
 
+        
+        <ul class="list-group">
+  <li class="list-group-item active">Bookmarks:</li>
+  <% @bookmarks.each do |opp| %>
+    <li class="list-group-item">
+      <%= link_to opp.title, opp_path(opp) %> -
+      <% if current_user.liked? opp %>
+        <%= link_to unbookmark_opp_path(opp.id), remote: true,
+                    id: "bookmark_#{opp.id}",
+                    class: "text-danger" do %>
+          Unbookmark
+        <% end %>
+      <% else %>
+        <%= link_to bookmark_opp_path(opp.id), remote: true,
+                    id: "bookmark_#{opp.id}",
+                    class: "text-primary" do %>
+          Bookmark
+        <% end %>
+      <% end %>
+    </li>
+  <% end %>
+</ul>
+
 
           <%# this is placeholder for users fave list%>
             <div class="col-md-6">
@@ -53,9 +76,3 @@
         </div>
       </div>
     </div>
-
-
-
-
-
-

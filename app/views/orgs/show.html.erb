@@ -1,11 +1,10 @@
 <%#  Single opportunity page %>
 <%#  Using @org here %>
-
 <h3>Organization Profile</h3>
 	<div class="card border-warning">
 		<div class="card-body">
 		  <div class="row">
-		        <div class="card-header w-100"><%= @org.name%></div>
+		        <div class="card-header w-100"><%= @org.name%>  <%= render "orgs/likes" %></div>
             <div class="card-body">
               <h5 class="card-title"><%= @org.name%></h5>
               <p class="card-text">
@@ -21,9 +20,8 @@
 <hr>
 
 
-<h4>Current Opportunities</h4> 
-
-      <div class="row">
+<h4>Current Opportunities</h4>
+    <div class="row">
       <% @org_opps.each do |item| %>
                       <div class="col-md-6">
                         <div class="card border-warning bg-light mb-3">
@@ -33,7 +31,21 @@
                                 <div class="card-body text-muted">
                                   <p class="card-text"><%= item.summary.truncate(100) %> </a> </p>
                                   
-                                  <sub><%= link_to "More info", opp_path(item.id) %></a></sub>
+                                  <sub><%= link_to "More info", opp_path(item.id) %></a>
+                        <% if current_user.liked? item %>
+              <%= link_to unbookmark_opp_path(item.id), remote: true,
+                          id: "bookmark_#{item.id}",
+                          class: "text-danger" do %>
+                <%= octicon "bookmark" %> Unbookmark
+              <% end %>
+            <% else %>
+              <%= link_to bookmark_opp_path(item.id), remote: true,
+                          id: "bookmark_#{item.id}",
+                          class: "text-primary" do %>
+                <%= octicon "bookmark" %>
+                Bookmark
+              <% end %>
+            <% end %></sub>
                                     </div>
                                   
                                 </div>
