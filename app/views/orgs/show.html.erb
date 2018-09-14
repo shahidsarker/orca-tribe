@@ -1,7 +1,7 @@
 <%#  Single opportunity page %>
 <%#  Using @org here %>
 
-
+<h3>Organization Profile</h3>
 	<div class="card border-warning">
 		<div class="card-body">
 		  <div class="row">
@@ -11,9 +11,9 @@
               <p class="card-text">
           <%= render "orgs/likes" %>
               </p>
-              <p class="card-text">Mission Statement : <%= @org.summary %></p>
-              <p class="card-text">Address : <%= @org.address %></p>
-              <p class="card-text">Website : <a href ='<%= @org.website %>'><%= @org.website %></a></p>
+              <p class="card-text"><b>Mission Statement :</b> <%= @org.summary %></p>
+              <p class="card-text"><b>Address : </b><%= @org.address %></p>
+              <p class="card-text"><b>Website :</b> <a href ='<%= @org.website %>'><%= @org.website %></a></p>
             </div>
           </div>
   </div>
@@ -27,7 +27,7 @@
       <% @org_opps.each do |item| %>
                       <div class="col-md-6">
                         <div class="card border-warning bg-light mb-3">
-                                <div class="card-header"><%= item.title.truncate(35) %><br>
+                                <div class="card-header"><b><%= item.title.truncate(35) %></b><br>
                                 <sub class="card-title"><%= item.start_date.strftime("%B %d, %Y") %> - <%= item.end_date.strftime("%B %d, %Y") %></sub>
                                 </div>
                                 <div class="card-body text-muted">

@@ -178,10 +178,10 @@
               </ul>
               <ul class="list-unstyled">
                 <li> <a href="/">Home</a></li>
-                 <% if current_user %>
+                <% if current_user %>
                     <li> <%= link_to 'Sign out' , destroy_user_session_path, method: :delete %></a></li>
 
-                 <% else %>
+                <% else %>
                   <li> <a href="/signup">Sign Up</a></li>
                 <% end %>
               </ul>
@@ -190,7 +190,7 @@
           <!-- HOPE TO MAKE THIS SECTION A RECENT LINK WITH THUMBNAIL, INFO.-->
           <div class="col-md-4">
             <div class="latest-posts">
-
+                <p>Popular Organizations</p>
             <% @orgs.each do |org| %>
               <a href="/orgs/<%= org.id%>">
                 <div class="post d-flex align-items-center">
