@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>OrcaTribe</title>
+    <title>iVolunteer</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -25,12 +25,14 @@
             <span class="navbar-toggler-icon"><i class="fas fa-bars"></i></span>
             </button>
             <!-- Navbar Brand -->
-            <a href="/" class="navbar-brand"><b>Volunteer, volunteer?</b></a>
+            <a href="/" class="navbar-brand"><b>iVolunteer</b></a>
           </div>
           <!-- Navbar Menu -->
           <div id="navbarcollapse" class="collapse navbar-collapse">
             <ul class="navbar-nav ml-auto">
               <li class="nav-item"><a href="/" class="nav-link">Home</a></li>
+              <li class="nav-item"><a href="/opps" class="nav-link ">Opportunities</a></li>
+              <li class="nav-item"><a href="/orgs" class="nav-link ">Organizations</a></li>
               <% if current_user %>
 
                   <!-- only show this code when signed in -->
@@ -48,9 +50,7 @@
                   </li>
                 
                 <% end %>
-              <li class="nav-item"><a href="/about" class="nav-link">About</a></li>
-              <li class="nav-item"><a href="/opps" class="nav-link ">Opportunities</a></li>
-              <li class="nav-item"><a href="/orgs" class="nav-link ">Organizations</a></li>
+              
             </ul>
           </div>
         </div>
@@ -153,13 +153,13 @@
         <div class="row ">
           <div class="col-md-4">
             <div class="logo">
-              <h6 class="text-white">Volunteer</h6>
+              <h6 class="text-white">iVolunteer</h6>
             </div>
             <div class="contact-details">
-              <p>Adress 1</p>
-              <p>Address 2?</p>
-              <p>Phone: (787) 123 4567 </p>
-              <p>Email: <a href="mailto:info@company.com">help@volunteer.com</a></p>
+              <p>18 Wallaby Way</p>
+              <p>New York, NY 11222 </p>
+              <p>Phone: 718.123.4567 </p>
+              <p>Email: <a href="mailto:info@company.com">help@ivolunteer.com</a></p>
               <ul class="social-menu">
                 <li class="list-inline-item"><a href="#"><i class="fab fa-facebook-f"></i></a></li>
                 <li class="list-inline-item"><a href="#"><i class="fab fa-twitter"></i></a></li>
@@ -172,23 +172,25 @@
           <div class="col-md-4">
             <div class="menus d-flex">
               <ul class="list-unstyled">
-                <li> <a href="/users">Our Team</a></li>
+                
                 <li> <a href="/posts">Organizations</a></li>
                 <li> <a href="/login">Opportunities</a></li>
-                <li> <a href="/">Newsletter</a></li>
               </ul>
               <ul class="list-unstyled">
                 <li> <a href="/">Home</a></li>
-                <li> <a href="/about">About</a></li>
-                <li> <a href="/contact">Contact</a></li>
-                <li> <a href="/signup">Sign Up</a></li>
+                <% if current_user %>
+                    <li> <%= link_to 'Sign out' , destroy_user_session_path, method: :delete %></a></li>
+
+                <% else %>
+                  <li> <a href="/signup">Sign Up</a></li>
+                <% end %>
               </ul>
             </div>
           </div>
           <!-- HOPE TO MAKE THIS SECTION A RECENT LINK WITH THUMBNAIL, INFO.-->
           <div class="col-md-4">
             <div class="latest-posts">
-
+                <p>Popular Organizations</p>
             <% @orgs.each do |org| %>
               <a href="/orgs/<%= org.id%>">
                 <div class="post d-flex align-items-center">
