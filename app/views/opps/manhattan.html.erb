@@ -1,0 +1,40 @@
+<div class="container">
+  <h3>Manhattan Opportunities</h3>
+  <% @manhattan_opps.each_with_index do |item, index| %>
+
+    <div class="row">
+      <div class="col-lg-12 card-header"><%= link_to item.title.capitalize! , { :action => 'show', :id => item.id} -%> —
+        <% if current_user.liked? item %>
+          <%= link_to unbookmark_opp_path(item.id), remote: true,
+                      id: "bookmark_#{item.id}",
+                      class: "text-danger" do %>
+            <%= octicon "bookmark" %> Unbookmark
+          <% end %>
+        <% else %>
+          <%= link_to bookmark_opp_path(item.id), remote: true,
+                      id: "bookmark_#{item.id}",
+                      class: "text-primary" do %>
+            <%= octicon "bookmark" %> Bookmark
+          <% end %>
+        <% end %>
+      </div>
+      <div class="col-lg-3">
+        <% if item.org.thumbnail? %>
+          <%= image_tag item.org.thumbnail, class: 'w-100' %>
+        <% else %>
+          <%= image_tag "https://placeholdit.imgix.net/~text?txtsize=38&txt=400%C3%97400&w=400&h=400", class: 'w-100' %>
+        <% end %>
+        <!--    <p>id: <%#= item.id %></p>-->
+      </div>
+
+      <div class="col-lg-9 px-3">
+        <div class="card-block px-3">
+          <p class="card-text"><%= item.summary %></p>
+          <p class="card-text">Dates: <%= item.start_date.strftime("%B %d, %Y") %> - <%= item.end_date.strftime("%B %d, %Y") %></p>
+          <p class="card-text">Organization : <%= link_to Org.find(item.org_id).name, {controller: "orgs", :action => 'show', :id => item.org_id} -%></p>
+        </div>
+      </div>
+    </div>
+    <hr>
+  <% end %>
+</div>

@@ -63,6 +63,28 @@ class OppsController < ApplicationController
     end
   end
 
+  def queens
+    @queens_opps = Opp.where(borough: 'Queens')
+  end
+
+  def manhattan
+  @manhattan_opps = Opp.where(borough: 'Manhattan')
+  end
+
+  def bronx
+    @bronx_opps = Opp.where(borough: 'The Bronx')
+  end
+  def brooklyn
+    @brooklyn_opps = Opp.where(borough: 'Brooklyn')
+  end
+  def statenisland
+    @statenisland_opps = Opp.where(borough: 'Staten Island')
+  end
+
+  def otherarea
+    @otherarea_opps = Opp.where(borough: 'Other')
+  end
+
   private
 
   def opp_params

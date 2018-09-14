@@ -14,6 +14,14 @@ get '/profile' => 'welcome_page#specific_user'
   # root 'opps#index'  
   # devise_for :users
   # resources :orgs
+  #
+  get '/queens' => 'opps#queens'
+  get '/manhattan' => 'opps#manhattan'
+  get '/bronx' => 'opps#bronx'
+  get '/statenisland' => 'opps#statenisland'
+  get '/brooklyn' => 'opps#brookyln'
+  get '/otherarea' => 'opps#otherarea'
+
   resources :opps do
     member do
       get 'bookmark'
