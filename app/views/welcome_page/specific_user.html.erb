@@ -1,78 +1,70 @@
 <div class="container">
-<h3>User Profile</h3>
+  <h3>User Profile</h3>
   <div class="card border-warning">
-		<div class="card-body">
-        <div class="row">
-          <div class="col-lg-12 card-header">
-            <span><h3> <%= @first_name %> <%= @last_name %> </h3></span>
-          </div>
-            <div class="card-body col-lg-3">
-                <p class="p-2"> <img src ="<%= @avatar %>"> </p>
-            </div>
-            <div class="col-lg-9 p-3">
-                <p><b>E-mail: </b> <%= @email %> </p>
-                <p><b>Location: </b> <%= @location %></p>
-                <p><b>About Me: </b> <%= @bio %> </p>
-            </div>
-          </div>
-      <button type="button" class="btn btn-outline-primary"><a href = "/users/edit">Edit</a></button>
-      </div>
-    </div><br>
-    <h4>Saved Opportunites</h4>
-      <%# this is placeholder for users fave list%>
-      <%# loops thru opps user is connected to similar to(copy/paste) the org page that loops thru opps %>
-      <div class="card border-warning">
-        <div class="card-body">
-          <div class="row">
-            <div class="col-md-6">
-              <div class="card border-warning bg-light mb-3">
-                <div class="card-header"><b>Title</b><br>
-                  <sub class="card-title">dates</sub>
-                </div>
-                <div class="card-body text-muted">
-                  <p class="card-text">summary </a> </p>
-                  <sub>link for more info</sub>
-                </div>
-              </div>
-            </div>
-
-        
-        <ul class="list-group">
-  <li class="list-group-item active">Bookmarks:</li>
-  <% @bookmarks.each do |opp| %>
-    <li class="list-group-item">
-      <%= link_to opp.title, opp_path(opp) %> -
-      <% if current_user.liked? opp %>
-        <%= link_to unbookmark_opp_path(opp.id), remote: true,
-                    id: "bookmark_#{opp.id}",
-                    class: "text-danger" do %>
-          Unbookmark
-        <% end %>
-      <% else %>
-        <%= link_to bookmark_opp_path(opp.id), remote: true,
-                    id: "bookmark_#{opp.id}",
-                    class: "text-primary" do %>
-          Bookmark
-        <% end %>
-      <% end %>
-    </li>
-  <% end %>
-</ul>
-
-
-          <%# this is placeholder for users fave list%>
-            <div class="col-md-6">
-              <div class="card border-warning bg-light mb-3">
-                <div class="card-header"><b>Title</b><br>
-                  <sub class="card-title">dates</sub>
-                </div>
-                <div class="card-body text-muted">
-                  <p class="card-text">summary </a> </p>
-                  <sub>link for more info</sub>
-                </div>
-              </div>
-            </div>
-          </div>
+    <div class="card-body">
+      <div class="row">
+        <div class="col-lg-12 card-header">
+          <span><h3> <%= @first_name %> <%= @last_name %> </h3></span>
+        </div>
+        <div class="card-body col-lg-3">
+          <p class="p-2"><img src="<%= @avatar %>"></p>
+        </div>
+        <div class="col-lg-9 p-3">
+          <p><b>E-mail: </b> <%= @email %> </p>
+          <p><b>Location: </b> <%= @location %></p>
+          <p><b>About Me: </b> <%= @bio %> </p>
         </div>
       </div>
+      <button type="button" class="btn btn-outline-primary"><a href="/users/edit">Edit</a></button>
     </div>
+  </div>
+  <br>
+  <h4>Saved Opportunites</h4>
+  <%# this is placeholder for users fave list%>
+  <%# loops thru opps user is connected to similar to(copy/paste) the org page that loops thru opps %>
+  <div class="card border-warning">
+    <div class="card-body">
+      <div class="row">
+
+          <% @bookmarks.each do |opp| %>
+            <%# this is placeholder for users fave list%>
+            <div class="col-md-6">
+              <div class="card border-warning bg-light mb-3">
+                <div class="card-header"><b><%= link_to opp.title, opp_path(opp) %></b><br>
+<!--                  <sub class="card-title"><%#= opp %></sub>-->
+                </div>
+                <div class="card-body text-muted">
+                  <p class="card-text"><%= opp.summary %></a> </p>
+                  <sub><% if current_user.liked? opp %>
+                      <%= link_to unbookmark_opp_path(opp.id), remote: true,
+                                  id: "bookmark_#{opp.id}",
+                                  class: "text-danger" do %>
+                        <%= octicon "bookmark" %> Unbookmark
+                      <% end %>
+                    <% else %>
+                      <%= link_to bookmark_opp_path(opp.id), remote: true,
+                                  id: "bookmark_#{opp.id}",
+                                  class: "text-primary" do %>
+                        <%= octicon "bookmark" %> Bookmark
+                      <% end %>
+                    <% end %></sub>
+                </div>
+              </div>
+            </div>
+
+
+
+
+
+
+
+
+
+
+          <% end %>
+        </ul>
+
+      </div>
+    </div>
+  </div>
+</div>
