@@ -1,14 +1,31 @@
-<h1> <%= @first_name %> <%= @last_name %> </h1>
+<h1><%= @first_name %> <%= @last_name %></h1>
 <p> <%= @email %> </p>
 <p> <img src ="<%= @avatar %>"> </p>
 
 <p><%= @location %></p>
 <p> <%= @bio %> </p>
 
+<ul class="list-group">
+  <li class="list-group-item active">Bookmarks:</li>
+  <% @bookmarks.each do |opp| %>
+    <li class="list-group-item">
+      <%= link_to opp.title, opp_path(opp) %> -
+      <% if current_user.liked? opp %>
+        <%= link_to unbookmark_opp_path(opp.id), remote: true,
+                    id: "bookmark_#{opp.id}",
+                    class: "text-danger" do %>
+          Unbookmark
+        <% end %>
+      <% else %>
+        <%= link_to bookmark_opp_path(opp.id), remote: true,
+                    id: "bookmark_#{opp.id}",
+                    class: "text-primary" do %>
+          Bookmark
+        <% end %>
+      <% end %>
+    </li>
+  <% end %>
+</ul>
+
+
 <button type="button" class="btn btn-outline-primary"><a href = "/users/edit">Edit</a></button>
-
-
-
-
-
-

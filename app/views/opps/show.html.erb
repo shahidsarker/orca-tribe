@@ -6,7 +6,20 @@
 <div class="card border-warning">
   <div class="card-body">
     <div class="row">
-      <div class="card-header w-100"><span><b><%= @opp.title %></b></span><br>
+      <div class="card-header w-100"><span><b><%= @opp.title %></b> - <% if current_user.liked? @opp %>
+            <%= link_to unbookmark_opp_path(@opp.id), remote: true,
+                        id: "bookmark_#{@opp.id}",
+                        class: "text-danger" do %>
+              <%= octicon "bookmark" %> Unbookmark
+            <% end %>
+          <% else %>
+            <%= link_to bookmark_opp_path(@opp.id), remote: true,
+                        id: "bookmark_#{@opp.id}",
+                        class: "text-primary" do %>
+              <%= octicon "bookmark" %>
+            Bookmark
+            <% end %>
+          <% end %></span><br>
         <sub class="card-title"><b>Dates:</b> <%= @opp.start_date.strftime("%B %d, %Y") %>
           - <%= @opp.end_date.strftime("%B %d, %Y") %></sub>
       </div>
@@ -23,28 +36,7 @@
         </p>
         <p class="card-text"><b>Location:</b> <%= @opp.location %></p>
         <p class="card-footer"><b>Requirements:</b> <%= sanitize @opp.requirement %></p>
-        <p>
-          <% link_to 'blah', fave_opp_path(@opp), method: :put %>
       </div>
     </div>
   </div>
 </div>
-
-
-<%# if current_user %>
-  <%# if !current_user.liked? @org %>
-
-    <%#= link_to like_org_path(@org), method: :put do %>
-      <%#= octicon "heart" %>
-      <%#= @org.get_likes.size %>
-<!--      Likes-->
-    <%# end %>
-  <%# else %>
-
-    <%#= link_to unlike_org_path(@org), method: :put do %>
-      <%#= octicon "heart" %>
-      <%#= @org.get_likes.size %>
-<!--      Likes-->
-    <%# end %>
-  <%# end %>
-<%# end %>

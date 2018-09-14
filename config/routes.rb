@@ -16,8 +16,8 @@ get '/profile' => 'welcome_page#specific_user'
   # resources :orgs
   resources :opps do
     member do
-      put 'fave', to: 'opps#fave'
-      # delete 'unfave', to: 'opps#unfave'
+      get 'bookmark'
+      get 'unbookmark'
     end
   end
 
