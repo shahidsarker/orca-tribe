@@ -190,6 +190,7 @@
           <!-- HOPE TO MAKE THIS SECTION A RECENT LINK WITH THUMBNAIL, INFO.-->
           <div class="col-md-4">
             <div class="latest-posts">
+              <% if current_user %>
                 <p>Popular Organizations</p>
             <% @orgs.each do |org| %>
               <a href="/orgs/<%= org.id%>">
@@ -197,11 +198,14 @@
                 <div class="image"><img src="<%= org.thumbnail%>" alt="..." class="img-fluid"></div>
                   <div class="title"><strong><%= org.name %> </strong></div>
                 </div></a>
-              <% end %>
-                
+                 <% end %>
                 </div>
+                <% end %>
+                
           </div>
+          
         </div>
+       
       </div>
 
       
