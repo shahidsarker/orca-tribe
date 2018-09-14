@@ -23,9 +23,28 @@
         </p>
         <p class="card-text"><b>Location:</b> <%= @opp.location %></p>
         <p class="card-footer"><b>Requirements:</b> <%= sanitize @opp.requirement %></p>
+        <p>
+          <% link_to 'blah', fave_opp_path(@opp), method: :put %>
       </div>
     </div>
   </div>
 </div>
-  
 
+
+<%# if current_user %>
+  <%# if !current_user.liked? @org %>
+
+    <%#= link_to like_org_path(@org), method: :put do %>
+      <%#= octicon "heart" %>
+      <%#= @org.get_likes.size %>
+<!--      Likes-->
+    <%# end %>
+  <%# else %>
+
+    <%#= link_to unlike_org_path(@org), method: :put do %>
+      <%#= octicon "heart" %>
+      <%#= @org.get_likes.size %>
+<!--      Likes-->
+    <%# end %>
+  <%# end %>
+<%# end %>

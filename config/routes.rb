@@ -14,7 +14,12 @@ get '/profile' => 'welcome_page#specific_user'
   # root 'opps#index'  
   # devise_for :users
   # resources :orgs
-  resources :opps
+  resources :opps do
+    member do
+      put 'fave', to: 'opps#fave'
+      # delete 'unfave', to: 'opps#unfave'
+    end
+  end
 
   resources :orgs do
     member do

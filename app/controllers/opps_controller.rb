@@ -45,6 +45,12 @@ class OppsController < ApplicationController
     end
   end
 
+
+  def fave
+    UserOpp.create(user:current_user,opp:params[:id])
+    redirect_back(fallback_location: root_path)
+  end
+
   private
 
   def opp_params
