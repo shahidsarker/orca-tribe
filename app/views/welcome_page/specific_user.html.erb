@@ -26,42 +26,36 @@
     <div class="card-body">
       <div class="row">
 
-          <% @bookmarks.each do |opp| %>
-            <%# this is placeholder for users fave list%>
-            <div class="col-md-6">
-              <div class="card border-warning bg-light mb-3">
-                <div class="card-header"><b><%= link_to opp.title, opp_path(opp) %></b><br>
-<!--                  <sub class="card-title"><%#= opp %></sub>-->
-                </div>
-                <div class="card-body text-muted">
-                  <p class="card-text"><%= opp.summary %></a> </p>
-                  <sub><% if current_user.liked? opp %>
-                      <%= link_to unbookmark_opp_path(opp.id), remote: true,
-                                  id: "bookmark_#{opp.id}",
-                                  class: "text-danger" do %>
-                        <%= octicon "bookmark" %> Unbookmark
-                      <% end %>
-                    <% else %>
-                      <%= link_to bookmark_opp_path(opp.id), remote: true,
-                                  id: "bookmark_#{opp.id}",
-                                  class: "text-primary" do %>
-                        <%= octicon "bookmark" %> Bookmark
-                      <% end %>
-                    <% end %></sub>
-                </div>
+        <% @bookmarks.each do |opp| %>
+          <%# this is placeholder for users fave list%>
+          <div class="col-md-6">
+            <div class="card border-warning bg-light mb-3">
+              <div class="card-header"><b><%= link_to opp.title, opp_path(opp) %></b><br>
+                <!--                  <sub class="card-title"><%#= opp %></sub>-->
+              </div>
+              <div class="card-body text-muted">
+                <p class="card-text"><%= opp.summary %></a> </p>
+                <sub>
+                  <% if current_user.liked? opp %>
+                    <%= link_to unbookmark_opp_path(opp.id), remote: true,
+                                id: "bookmark_#{opp.id}",
+                                class: "text-danger" do %>
+                      <%= octicon "bookmark" %> Unbookmark
+                    <% end %>
+                  <% else %>
+                    <%= link_to bookmark_opp_path(opp.id), remote: true,
+                                id: "bookmark_#{opp.id}",
+                                class: "text-primary" do %>
+                      <%= octicon "bookmark" %> Bookmark
+                    <% end %>
+                  <% end %>
+                </sub>
               </div>
             </div>
+          </div>
 
 
-
-
-
-
-
-
-
-
-          <% end %>
+        <% end %>
         </ul>
 
       </div>

@@ -3,18 +3,20 @@
   <% @manhattan_opps.each_with_index do |item, index| %>
 
     <div class="row">
-      <div class="col-lg-12 card-header"><%= link_to item.title.capitalize! , { :action => 'show', :id => item.id} -%> —
-        <% if current_user.liked? item %>
-          <%= link_to unbookmark_opp_path(item.id), remote: true,
-                      id: "bookmark_#{item.id}",
-                      class: "text-danger" do %>
-            <%= octicon "bookmark" %> Unbookmark
-          <% end %>
-        <% else %>
-          <%= link_to bookmark_opp_path(item.id), remote: true,
-                      id: "bookmark_#{item.id}",
-                      class: "text-primary" do %>
-            <%= octicon "bookmark" %> Bookmark
+      <div class="col-lg-12 card-header"><%= link_to item.title.capitalize! , { :action => 'show', :id => item.id} -%>
+        <% if current_user %> —
+          <% if current_user.liked? item %>
+            <%= link_to unbookmark_opp_path(item.id), remote: true,
+                        id: "bookmark_#{item.id}",
+                        class: "text-danger" do %>
+              <%= octicon "bookmark" %> Unbookmark
+            <% end %>
+          <% else %>
+            <%= link_to bookmark_opp_path(item.id), remote: true,
+                        id: "bookmark_#{item.id}",
+                        class: "text-primary" do %>
+              <%= octicon "bookmark" %> Bookmark
+            <% end %>
           <% end %>
         <% end %>
       </div>
