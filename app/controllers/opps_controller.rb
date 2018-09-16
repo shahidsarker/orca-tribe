@@ -4,7 +4,7 @@ class OppsController < ApplicationController
   before_action :set_opp, only: [:show, :edit, :update, :destroy, :bookmark, :unbookmark]
   # list method - shows all opps
   def index
-    @opps = Opp.all
+    @opps = Opp.all.page(params[:page])
   end
 
   # show method - specific page for opportunity
