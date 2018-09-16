@@ -49,10 +49,13 @@ class OppsController < ApplicationController
 
 
   def bookmark
+    flash[:notice] = "Opportunity succesfully bookmarked"
     @opp.liked_by current_user
     respond_to do |format|
       format.html { redirect_to :back }
       format.js
+
+      
     end
   end
   def unbookmark
@@ -60,6 +63,8 @@ class OppsController < ApplicationController
     respond_to do |format|
       format.html { redirect_to :back }
       format.js
+      flash[:notice] = "Successfully updated"
+
     end
   end
 
