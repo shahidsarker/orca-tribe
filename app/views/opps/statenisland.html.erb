@@ -1,13 +1,9 @@
-<%#  Listing of all organizations here %>
-<%#  Using @opps here %>
-<%#  <p> <%= index +1 %>
-
 <div class="container">
-  <h3>Opportunities</h3>
-  <% @opps.each_with_index do |item, index| %>
+  <h3>Opportunities in Staten Island</h3>
+  <% @statenisland_opps.each_with_index do |item, index| %>
 
     <div class="row">
-      <div class="col-lg-12 card-header"><%= link_to item.title.capitalize!, {:action => 'show', :id => item.id} -%>
+      <div class="col-lg-12 card-header"><%= link_to item.title.capitalize! , { :action => 'show', :id => item.id} -%>
         <% if current_user %> —
           <% if current_user.liked? item %>
             <%= link_to unbookmark_opp_path(item.id), remote: true,
@@ -36,10 +32,8 @@
       <div class="col-lg-9 px-3">
         <div class="card-block px-3">
           <p class="card-text"><%= item.summary %></p>
-          <p class="card-text">Dates: <%= item.start_date.strftime("%B %d, %Y") %>
-            - <%= item.end_date.strftime("%B %d, %Y") %></p>
-          <p class="card-text">Organization
-            : <%= link_to Org.find(item.org_id).name, {controller: "orgs", :action => 'show', :id => item.org_id} -%></p>
+          <p class="card-text">Dates: <%= item.start_date.strftime("%B %d, %Y") %> - <%= item.end_date.strftime("%B %d, %Y") %></p>
+          <p class="card-text">Organization : <%= link_to Org.find(item.org_id).name, {controller: "orgs", :action => 'show', :id => item.org_id} -%></p>
         </div>
       </div>
     </div>

@@ -1,5 +1,7 @@
 class OppsController < ApplicationController
   # before_action :authenticate_user!
+  #
+  before_action :set_opp, only: [:show, :edit, :update, :destroy, :bookmark, :unbookmark]
   # list method - shows all opps
   def index
     @opps = Opp.all
@@ -45,6 +47,44 @@ class OppsController < ApplicationController
     end
   end
 
+
+  def bookmark
+    @opp.liked_by current_user
+    respond_to do |format|
+      format.html { redirect_to :back }
+      format.js
+    end
+  end
+  def unbookmark
+    @opp.unliked_by current_user
+    respond_to do |format|
+      format.html { redirect_to :back }
+      format.js
+    end
+  end
+
+  def queens
+    @queens_opps = Opp.where(borough: 'Queens')
+  end
+
+  def manhattan
+  @manhattan_opps = Opp.where(borough: 'Manhattan')
+  end
+
+  def bronx
+    @bronx_opps = Opp.where(borough: 'The Bronx')
+  end
+  def brooklyn
+    @brooklyn_opps = Opp.where(borough: 'Brooklyn')
+  end
+  def statenisland
+    @statenisland_opps = Opp.where(borough: 'Staten Island')
+  end
+
+  def otherarea
+    @otherarea_opps = Opp.where(borough: 'Other')
+  end
+
   private
 
   def opp_params
@@ -52,4 +92,8 @@ class OppsController < ApplicationController
                                  :vol_request, :recurrence, :requirement, :location)
     #the :created_at, :updated_at and :api_opp_id are the other params
   end
+end
+
+def set_opp
+  @opp = Opp.find(params[:id])
 end

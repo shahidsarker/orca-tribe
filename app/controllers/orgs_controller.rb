@@ -3,7 +3,7 @@ class OrgsController < ApplicationController
 
   # list method shows all orgs
   def index
-    @orgs = Org.all
+    @orgs = Org.all.page(params[:page])
 
   end
 

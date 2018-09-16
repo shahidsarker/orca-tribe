@@ -57,7 +57,8 @@
     </header>
 
     <!-- Hero Section-->
-        <section style="background-image: url(<%= asset_path('hero2') %>); background-size: cover; background-position: center center" class="hero">
+        <section style="background-image: url(<%= asset_path('hero2.jpg') %>); background-size: cover; background-position: center center" class="hero">
+
           <div class="container">
             <div class="row">
               <div class="col-lg-7">
@@ -89,32 +90,19 @@
         </main>
 
         <aside class="col-lg-4">
-          
-          <!-- Sidebar[Search Bar Sidebar]-->
-          <div class="sidebar search">
-            <header>
-              <h4>Search??</h4>
-            </header>
-            <!-- update what search action does -->
-            <form action="#" class="search-form">
-              <div class="form-group">
-                <input type="search" placeholder="What are you looking for?">
-                <button type="submit" class="submit"><i class="fas fa-search"></i></button>
-              </div>
-            </form>
-          </div>
 
           <!-- Sidebar [Categories Sidebar]-->
           <div class="sidebar categories">
             <header>
               <h4>Filter by Borough</h4>
             </header>
-            <div class="item d-flex justify-content-between"><a href="#">Manhattan</a><span>12</span></div>
-            <div class="item d-flex justify-content-between"><a href="#">Brooklyn</a><span>25</span></div>
-            <div class="item d-flex justify-content-between"><a href="#">Bronx</a><span>8</span></div>
-            <div class="item d-flex justify-content-between"><a href="#">Queens</a><span>17</span></div>
-            <div class="item d-flex justify-content-between"><a href="#">Staten Island</a><span>25</span></div>
-          </div>   
+            <div class="item d-flex justify-content-between"><a href="/manhattan">Manhattan</a></div>
+            <div class="item d-flex justify-content-between"><a href="/brooklyn">Brooklyn</a></div>
+            <div class="item d-flex justify-content-between"><a href="/bronx">Bronx</a></div>
+            <div class="item d-flex justify-content-between"><a href="/queens">Queens</a></div>
+            <div class="item d-flex justify-content-between"><a href="/statenisland">Staten Island</a></div>
+            <div class="item d-flex justify-content-between"><a href="/otherarea">Other Areas</a></div>
+          </div>
         </aside>
       </div>
     </div>
@@ -185,18 +173,23 @@
           <!-- HOPE TO MAKE THIS SECTION A RECENT LINK WITH THUMBNAIL, INFO.-->
           <div class="col-md-4">
             <div class="latest-posts">
+              <% if current_user %>
                 <p>Popular Organizations</p>
             <% @orgs.limit(3).each do |org| %>
               <a href="/orgs/<%= org.id%>">
                 <div class="post d-flex align-items-center">
-                <div class="image"><img src="<%= org.thumbnail%>" alt="..." class="img-fluid"></div>
+                  <div class="image"><img src="<%= org.thumbnail%>" alt="..." class="img-fluid"></div>
                   <div class="title"><strong><%= org.name %> </strong></div>
+                  
                 </div></a>
-              <% end %>
-                
+                 <% end %>
                 </div>
+                <% end %>
+                
           </div>
+          
         </div>
+       
       </div>
 
       
@@ -204,10 +197,10 @@
         <div class="container">
           <div class="row">
             <div class="col-md-6">
-              <p>&copy; 2018. All rights reserved.</p>
+              <p>&copy; 2018 Orca Time. All rights reserved.</p>
             </div>
             <div class="col-md-6 text-right">
-              <p>A site by <a href="https://github.com" class="text-white">Orca Tribe</a>
+              <p>A site by <a href="https://github.com/shahidsarker/orca-tribe" class="text-white">Orca Tribe</a>
               </p>
             </div>
           </div>

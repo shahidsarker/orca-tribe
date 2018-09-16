@@ -5,7 +5,8 @@
 <h3>Organizations</h3>
 <% @orgs.each_with_index do |org, index| %>
 <div class="row ">
-    <div class="col-lg-12 card-header"><%= link_to org.name, {:action => 'show', :id => org.id} -%>
+    <div class="col-lg-12 card-header"><%= link_to org.name, {:action => 'show', :id => org.id} %> - <% @org = org %>
+      <%= render "orgs/likes" %>
     </div>
 
 
@@ -13,21 +14,17 @@
     <% if org.thumbnail? %>
     <%= image_tag org.thumbnail, class: 'w-100' %>
     <% else %>
-    <%= image_tag "https://placeholdit.imgix.net/~text?txtsize=38&txt=400%C3%97400&w=400&h=400", class: 'w-100' %>
+    <%= image_tag "/assets/default.jpg", class: 'w-100' %>
     <% end %>
   </div>
 
   <div class="col-lg-9 px-3">
     <div class="card-block px-3">
-      <p><!--  Like/Unlike Section-->
-          <%= octicon "heart" %>
-          <%= org.get_likes.size %>
-          Likes
-      </p>
-      <p class="card-text">Description: <%= org.summary %></p>
+      <p class="card-text"><%= org.summary %></p>
     </div>
   </div>
 </div>
 <hr>
 <% end %>
 </div>
+<div><%= paginate @orgs %></div>
