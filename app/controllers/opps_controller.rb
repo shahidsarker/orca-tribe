@@ -64,25 +64,25 @@ class OppsController < ApplicationController
   end
 
   def queens
-    @queens_opps = Opp.where(borough: 'Queens')
+    @queens_opps = Opp.where(borough: 'Queens').page(params[:page])
   end
 
   def manhattan
-  @manhattan_opps = Opp.where(borough: 'Manhattan')
+  @manhattan_opps = Opp.where(borough: 'Manhattan').page(params[:page])
   end
 
   def bronx
-    @bronx_opps = Opp.where(borough: 'The Bronx')
+    @bronx_opps = Opp.where(borough: 'The Bronx').page(params[:page])
   end
   def brooklyn
-    @brooklyn_opps = Opp.where(borough: 'Brooklyn')
+    @brooklyn_opps = Opp.where(borough: 'Brooklyn').page(params[:page])
   end
   def statenisland
-    @statenisland_opps = Opp.where(borough: 'Staten Island')
+    @statenisland_opps = Opp.where(borough: 'Staten Island').page(params[:page])
   end
 
   def otherarea
-    @otherarea_opps = Opp.where(borough: 'Other')
+    @otherarea_opps = Opp.where(borough: 'Other').page(params[:page])
   end
 
   private
