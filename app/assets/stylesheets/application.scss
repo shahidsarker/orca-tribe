@@ -185,7 +185,15 @@ a.hero-link {
 //  Navbar Media Query 
 @media (max-width: 991px) {
   nav.navbar {
-
+    b {
+      font-size: 2em;
+    }
+    span {
+      font-size: em;
+      color: #000;
+      display: inline-block;
+      text-decoration: none;
+    }
     .navbar-header,
     &::after {
       width: 100%;
