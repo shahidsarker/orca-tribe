@@ -1,5 +1,5 @@
 <div class="container">
-  <h3>Bronx Opportunities</h3>
+  <h3>Opportunities in The Bronx </h3>
   <% @bronx_opps.each_with_index do |item, index| %>
 
     <div class="row">
@@ -41,3 +41,4 @@
     <hr>
   <% end %>
 </div>
+<div><%= paginate @bronx_opps %></div>
