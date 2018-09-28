@@ -4,13 +4,13 @@
 
 ## Built With:
 
-**Bootstrap
-**ruby 2.5.1
-**Ruby on Rails
-**kaminari
-**jQuery
-**acts_as_votable
-**HTTPARTY
+**Bootstrap**
+**ruby 2.5.1**
+**Ruby on Rails**
+**kaminari**
+**jQuery**
+**acts_as_votable**
+**HTTPARTY**
 
 ## Feautures 
 * Devise for user authentication
