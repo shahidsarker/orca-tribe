@@ -4,17 +4,19 @@
 
 ## Built With:
 
-**Bootstrap**
-**ruby 2.5.1**
-**Ruby on Rails**
-**kaminari**
-**jQuery**
-**acts_as_votable**
-**HTTPARTY**
+
+* Ruby version 2.5.1
+* Ruby on Rails
+* Bootstrap
+* jQuery
+* Kaminari
+* acts_as_votable
+* HTTPARTY
+* NYC Service API
 
 ## Feautures 
-* Devise for user authentication
 * NYC Service API (RESTful API)
+* Devise for user authentication
 * Pagination using kaminari gem
 * Bookmarking functionality using acts_as_votable gem
 * 'Like' functionality using acts_as_votable gem
