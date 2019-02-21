@@ -1,24 +1,27 @@
-# README
+## Description
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+### iVolunteer is an app where users can view NYC orginizations and their current volunteer oppurtunites.
 
-Things you may want to cover:
+## Built With:
 
-* Ruby version
 
-* System dependencies
+* Ruby version 2.5.1
+* Ruby on Rails
+* Bootstrap
+* jQuery
+* Kaminari
+* acts_as_votable
+* HTTPARTY
+* NYC Service API
 
-* Configuration
+## Feautures 
+* NYC Service API (RESTful API)
+* Devise for user authentication
+* Pagination using kaminari gem
+* Bookmarking functionality using acts_as_votable gem
+* 'Like' functionality using acts_as_votable gem
 
-* Database creation
+# Demo
 
-* Database initialization
 
-* How to run the test suite
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* Members
